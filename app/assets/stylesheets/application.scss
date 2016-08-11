@@ -175,6 +175,9 @@ $container-max-widths: (
     margin: 0 auto;
     color: white;
     text-align: center;
+    @media(min-width: 768px){
+    	padding-top: 65px;
+  	}
 
 }
 
@@ -268,18 +271,17 @@ $container-max-widths: (
 
 .child_section_name{
 	font-weight: 700;
-	margin-top: 20px;
+	padding-top: 20px;
 	a{
-		color: #6499F1;
+		color: #55595c;
 	}
 }
 
 .child_wrap{
 	background-color: #f7f4f4;
 	border-radius: 10px;
-	padding-top: 10px;
 	padding-bottom: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .section_main_wrap{
