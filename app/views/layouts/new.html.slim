@@ -1,0 +1,11 @@
+.main_body
+	.l_sidebar
+		.text_block
+			.back_wrap_layout
+				- @section = Section.last
+				- if @section.parent_section.nil?
+					= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем предметам", root_path
+				- else
+					= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
+			
+	.r_main_wrap
