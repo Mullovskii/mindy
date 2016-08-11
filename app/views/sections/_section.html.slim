@@ -1,0 +1,21 @@
+.col-md-4
+	.section_main_wrap
+		.section_image_wrap
+			- if section.id < 21
+				= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), section
+			- else
+				= link_to (image_tag "0.png", class: "section_image"), section
+		.section_name
+			= link_to (section.name), section
+	/= image_tag("micro.png", class: "img-circle", alt: "Responsive image")
+	/ .main_section_box
+	/ 	.main_section_name
+	/ 		.section_image_wrap
+	/ 			= link_to (image_tag "micro.png", class: "section_image"), section
+	/ 			= link_to (section.name), section, class: "section_name_card"
+			/= link_to section.name, section
+	.child_wrap
+		- section.child_sections.each do |s|
+			.child_section_name
+				= render partial: "sections/child_section", locals: {section: s}	
+			

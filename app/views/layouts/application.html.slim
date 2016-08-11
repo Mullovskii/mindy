@@ -1,0 +1,17 @@
+doctype html
+html[lang="ru"]
+    head
+        title
+            | Mindy
+        meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        = favicon_link_tag 'favicon.ico'
+        = csrf_meta_tags
+        = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+        = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+        = render 'favicon'
+
+    body
+        = render 'layouts/top_menu'
+        = yield
+  
+

@@ -1,0 +1,43 @@
+.row
+	.col-md-12
+		.header_wrap_small
+			.text_wrap
+				.back_wrap
+					/= link_to(image_tag('back_icon.png', class: "back_icon"), root_path)
+					- if @section.parent_section.nil?
+						= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем предметам", root_path
+					- else
+						= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
+
+				.section_header_title
+					= @section.name
+				/ .medium_decription
+				/ 	| Как подсчитать NPV или построить матрицу BCG? 
+				/ 	| Находите лучшие аналитические приемы ведущих консалинговых агенств и добавляйте свои методологии. Да, это крестовый поход против "Большой тройки"
+
+
+.container
+	.row
+		.col-md-12
+			.small_sections_wrap
+				= render @section.child_sections, partial: "sections/child_section"
+
+/ <p id="notice"><%= notice %></p>
+
+/ <p>
+/   <strong>Name:</strong>
+/   <%= @section.name %>
+/ </p>
+
+/ <p>
+/   <strong>Parent section:</strong>
+/   <%= @section.parent_section_id %>
+/ </p>
+
+/ <p>
+/   <strong>Description:</strong>
+/   <%= @section.description %>
+/ </p>
+
+/ <%= link_to 'Edit', edit_section_path(@section) %> 
+/ <%= link_to 'Back', sections_path %>
