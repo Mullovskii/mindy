@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :layouts
   resources :sections
   root to: 'static#hello'
 
