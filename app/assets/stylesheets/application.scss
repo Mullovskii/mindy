@@ -403,3 +403,41 @@ $container-max-widths: (
 	
 }
 
+.input-name{
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-weight: 900;
+	font-size: 18px;
+	text-align: center;
+}
+
+.input-description{
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-weight: 100;
+	font-size: 14px;
+	min-height: 300px;
+	text-align: center;
+}
+
+.input-name::-webkit-input-placeholder { color: white;}
+.input-name:-moz-placeholder { color: white; }
+.input-name::-moz-placeholder { color: white; }
+.input-name:-ms-input-placeholder { color: white; }
+
+.input-name:focus{
+	background-color: transparent;
+	color: white;
+}
+
+.input-description::-webkit-input-placeholder { color: white; }
+.input-description:-moz-placeholder { color: white; }
+.input-description::-moz-placeholder { color: white; }
+.input-description:-ms-input-placeholder { color: white; }
+
+.input-description:focus{
+	background-color: transparent;
+	color: white;
+}

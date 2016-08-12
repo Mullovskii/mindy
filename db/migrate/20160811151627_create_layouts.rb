@@ -3,7 +3,7 @@ class CreateLayouts < ActiveRecord::Migration[5.0]
     create_table :layouts do |t|
       t.integer :user_id
       t.integer :section_id
-      t.string :name
+      t.text :name
       t.text :description
       t.string :image_url
 

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160811151627) do
   create_table "layouts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "section_id"
-    t.string   "name"
+    t.text     "name"
     t.text     "description"
     t.string   "image_url"
     t.datetime "created_at",  null: false

@@ -7,5 +7,13 @@
 					= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем предметам", root_path
 				- else
 					= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
+		
+			= simple_form_for @layout, html: { class: 'form-horizontal' } do |f|
+				.input
+					= f.input :name, placeholder: 'Здесь назовите макет...', label: false, :input_html => { class: 'input-name' }
+				.input
+					= f.input :description, label: false, placeholder: 'Здесь кратко опишите, что макет помогает считать или анализировать...', :input_html => { class: 'input-description' }
 			
 	.r_main_wrap
+		.layout_body
+			| Тест
