@@ -15,6 +15,7 @@ class LayoutsController < ApplicationController
   # GET /layouts/new
   def new
     @layout = Layout.new
+    @layout.section_id = params[:section_id]
   end
 
   # GET /layouts/1/edit
@@ -28,7 +29,7 @@ class LayoutsController < ApplicationController
 
     respond_to do |format|
       if @layout.save
-        format.html { redirect_to @layout, notice: 'Layout was successfully created.' }
+        format.html { redirect_to @layout, notice: 'Шаблон создан.' }
         format.json { render :show, status: :created, location: @layout }
       else
         format.html { render :new }

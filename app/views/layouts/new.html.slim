@@ -1,29 +1,27 @@
 .main_body
-	.l_sidebar
-		.text_block
-			.back_wrap_layout
-				- @section = Section.last
-				- if @section.parent_section.nil?
-					= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем предметам", root_path
-				- else
-					= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
-		
-			= simple_form_for @layout, html: { class: 'form-horizontal' } do |f|
+	= simple_form_for @layout, html: { class: 'form-horizontal', id: "form1"  } do |f|
+		.l_sidebar
+			.text_block
+				.back_wrap_layout
+					= link_to image_tag('back_icon.png', class: "back_icon") + Section.find(@layout.section_id).name, section_path(@layout.section_id)
+			
 				.input
 					= f.input :name, placeholder: 'Название макета...', label: false, :input_html => { class: 'input-name' }
 				.input
 					= f.input :description, label: false, placeholder: 'Краткое описание, что макет помогает считать или анализировать...', :input_html => { class: 'input-description' }
-			
-	.r_main_wrap
-		.layout_body
-			= simple_form_for @layout, html: { class: 'form-horizontal' } do |f|
+					=f.hidden_field :section_id, :value => @layout.section_id
+
+				
+		.r_main_wrap
+			.layout_body
 				.input_layout_content
 					= f.input :heading, label: false, placeholder: 'Заголовок...', :input_html => { class: 'input-heading'} 
 
 				.input_layout_content
 					= f.input :content, label: false, placeholder: 'Раскройте суть методологии...', :input_html => { class: 'input-content' }, as: :wysihtml5
 
-					= f.button :submit, "Сохранить", class: "btn btn-default red"
+					= f.button :submit, "Сохранить", class: "btn btn-default", id: "trigger"
+				
 
 
 

@@ -103,7 +103,19 @@ $container-max-widths: (
 	font-weight: 100;
 	color: white;
 	background-color: #1BB645;
+	
 }
+a.btn{
+		color: white;
+	}
+
+.btn:hover{
+	color: white;
+	border-radius: 1.25rem;
+	font-weight: 100;
+	color: white;
+	background-color: rgba(27, 182, 69, 0.71);
+	}
 
 .menu_wrap{
 	background-color: white;
@@ -716,3 +728,49 @@ margin-right: 10px;
 	color: #373a3c;
 }
 
+.wysihtml5.optional.input-content.form-control.wysihtml5-editor.placeholder{
+	font-weight: 100!important;
+	font-size: 16px!important;
+}
+
+.layout_name_holder{
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-weight: 900;
+	font-size: 18px;
+	text-align: center;
+	resize: none;
+}
+
+.layout_description_holder{
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-weight: 100;
+	font-size: 14px;
+	min-height: 300px;
+	text-align: center;
+	resize: none;
+}
+
+.layout_heading_holder{
+	background-color: transparent;
+	border: none;
+	color: #373a3c;
+	font-weight: 900;
+	font-size: 24px;
+	max-height: 50px;
+	resize: none;
+}
+
+.layout_content_holder{
+	background-color: transparent;
+	border: none;
+	color: #373a3c;
+	font-weight: 300!important;
+	font-size: 16px;
+	max-height: 50px;
+	resize: none;
+	min-height: 600px;
+}

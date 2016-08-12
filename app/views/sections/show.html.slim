@@ -18,10 +18,27 @@
 			- if @section.child_sections.empty?
 				.layouts_group
 					.button_add_layout
-						= button_to "Добавить шаблон", new_layout_path(@section.id), class: 'btn btn-default', method: :get
+						= link_to "Добавить шаблон", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
 					.little_description
 						
 						| Шаблон - это статья, показывающая, как лучше что-то считать или анализировать. Вы можете создать шаблон с формами, куда другие пользователи будут вносить данные и выгружать результаты. Круто.
+
+
+					.layouts_grid
+					
+					
+						- @layouts = Layout.all
+						= @layouts.each do |l|
+							.col.md-3
+								= l.name
+										
+											
+										
+											
+
+
+
+
 			-else
 				.small_sections_wrap
 					= render @section.child_sections, partial: "sections/child_section"

@@ -17,3 +17,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap-wysihtml5
 
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
+});
+
