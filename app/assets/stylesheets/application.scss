@@ -391,7 +391,7 @@ $container-max-widths: (
 .back_wrap_layout{
 	text-transform: uppercase;
 	font-size: 18px;
-	padding-bottom: 10px;
+	padding-bottom: 26px;
 	padding-right: 5px;
 	margin: 0 auto;
 	a{
@@ -411,6 +411,7 @@ $container-max-widths: (
 	font-weight: 900;
 	font-size: 18px;
 	text-align: center;
+	resize: none;
 }
 
 .input-description{
@@ -421,6 +422,7 @@ $container-max-widths: (
 	font-size: 14px;
 	min-height: 300px;
 	text-align: center;
+	resize: none;
 }
 
 .input-name::-webkit-input-placeholder { color: white;}
@@ -450,13 +452,267 @@ $container-max-widths: (
 		font-weight: 100!important;
 		color: white;
 		background-color: #ccc;
-		font-size: 13px;
+		font-size: 12px;
+		vertical-align: middle;
 	}
 	.current-font{
 		color: white;
-		font-size: 13px;
+		font-size: 12px;
 	}
 }
 
-ul.wysihtml5-toolbar li a[title="Insert image"] { background-image: "assets/logo.png" }
-ul.wysihtml5-toolbar li.dropdown { display: none; }
+ul.wysihtml5-toolbar li a[title="Insert image"] { 
+	background-image: image-url("camera.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+
+}
+
+ul.wysihtml5-toolbar li a[title="Unordered list"] { 
+	background-image: image-url("order.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+
+}
+
+ul.wysihtml5-toolbar li a[title="Ordered list"] { 
+	background-image: image-url("numbered.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+
+}
+
+
+ul.wysihtml5-toolbar li a[title="Unordered list"].btn.wysihtml5-command-active { 
+	background-image: image-url("order.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+
+}
+
+ul.wysihtml5-toolbar li a[title="Ordered list"].btn.wysihtml5-command-active { 
+	background-image: image-url("numbered.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+
+}
+
+ul.wysihtml5-toolbar li a[title="Insert link"] { 
+	background-image: image-url("link.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+	margin-left: -5px;
+	margin-right: 5px;
+
+}
+
+ul.wysihtml5-toolbar li a[title="Outdent"] { 
+	display: none;
+}
+
+ul.wysihtml5-toolbar li a[title="Indent"] { 
+	display: none;
+}
+
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="blockquote"]{ 
+	background-image: image-url("quotes.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+	margin-right: 5px;
+	
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="blockquote"].btn.wysihtml5-command-active{ 
+	background-image: image-url("quotes.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+	
+}
+
+ul.dropdown-menu{
+	padding: 20px;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h1"]{ 
+	color: #6499F1;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="p"]{ 
+	color: #6499F1;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h2"]{ 
+	color: #6499F1;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h3"]{ 
+	color: #6499F1;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h4"]{ 
+	display: none;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h5"]{ 
+	display: none;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h6"]{ 
+	display: none;
+}
+
+.glyphicon-quote:before{
+	display: none;
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
+	margin-right: 10px;
+	border-radius: 50px;
+	height: 34px;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	color: grey;
+}
+
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle){
+	margin-right: 10px;
+	border-radius: 50px;
+	height: 34px;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	color: grey;
+
+}
+
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child){
+	display: none;
+}
+
+ul.wysihtml5-toolbar a[data-toggle="dropdown"].btn.wysihtml5-command-active{ 
+	
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+	
+}
+
+.wysihtml5-toolbar .btn{
+	background-color: transparent;
+	color: grey;
+}
+
+.wysihtml5-toolbar .current-font{
+	color: grey;
+}
+
+
+ul.wysihtml5-toolbar li.dropdown { 
+margin-right: 10px;
+	border-radius: 50px;
+	height: 34px;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	color: grey; }
+
+.layout_body{
+	margin-top: 49px;
+	margin-left: 50px;
+	max-width: 700px;
+}
+
+.input-content{
+	background-color: transparent;
+	border: none;
+	color: #373a3c;
+	font-weight: 300!important;
+	font-size: 16px;
+	max-height: 50px;
+	resize: none;
+	min-height: 600px;
+}
+
+.input-content::-webkit-input-placeholder { color: #373a3c;}
+.input-content:-moz-placeholder { color: #373a3c; }
+.input-content::-moz-placeholder { color: #373a3c; }
+.input-content:-ms-input-placeholder { color: #373a3c; }
+
+.input-content:focus{
+	background-color: transparent;
+	color: #373a3c;
+}
+
+
+.input-heading{
+	background-color: transparent;
+	border: none;
+	color: #373a3c;
+	font-weight: 900;
+	font-size: 24px;
+	max-height: 50px;
+	resize: none;
+}
+
+.input-heading::-webkit-input-placeholder { color: #373a3c;}
+.input-heading:-moz-placeholder { color: #373a3c; }
+.input-heading::-moz-placeholder { color: #373a3c; }
+.input-heading:-ms-input-placeholder { color: #373a3c; }
+
+.input-heading:focus{
+	background-color: transparent;
+	color: #373a3c;
+}
+

@@ -69,6 +69,6 @@ class LayoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def layout_params
-      params.require(:layout).permit(:user_id, :section_id,  :name, :description, :image_url, :content)
+      params.require(:layout).permit(:user_id, :heading, :section_id,  :name, :description, :image_url, :content)
     end
 end

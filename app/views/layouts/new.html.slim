@@ -10,15 +10,20 @@
 		
 			= simple_form_for @layout, html: { class: 'form-horizontal' } do |f|
 				.input
-					= f.input :name, placeholder: 'Здесь назовите макет...', label: false, :input_html => { class: 'input-name' }
+					= f.input :name, placeholder: 'Название макета...', label: false, :input_html => { class: 'input-name' }
 				.input
-					= f.input :description, label: false, placeholder: 'Здесь кратко опишите, что макет помогает считать или анализировать...', :input_html => { class: 'input-description' }
+					= f.input :description, label: false, placeholder: 'Краткое описание, что макет помогает считать или анализировать...', :input_html => { class: 'input-description' }
 			
 	.r_main_wrap
 		.layout_body
 			= simple_form_for @layout, html: { class: 'form-horizontal' } do |f|
-				.input
-					= f.input :content, label: false, placeholder: 'Раскройте суть методологии...', :input_html => { class: 'input-content' }, as: :wysihtml5, id: "sfas"
+				.input_layout_content
+					= f.input :heading, label: false, placeholder: 'Заголовок...', :input_html => { class: 'input-heading'} 
+
+				.input_layout_content
+					= f.input :content, label: false, placeholder: 'Раскройте суть методологии...', :input_html => { class: 'input-content' }, as: :wysihtml5
+
+					= f.button :submit, "Сохранить", class: "btn btn-default red"
 
 
 

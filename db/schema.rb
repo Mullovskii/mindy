@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160811151627) do
     t.text     "name"
     t.text     "description"
     t.text     "content"
+    t.text     "heading"
     t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
