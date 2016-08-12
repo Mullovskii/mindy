@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160811151627) do
     t.integer  "section_id"
     t.text     "name"
     t.text     "description"
+    t.text     "content"
     t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'rails_real_favicon'
+gem 'bootstrap-wysihtml5-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

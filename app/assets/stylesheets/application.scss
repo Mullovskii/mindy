@@ -15,6 +15,7 @@
  */
 
 @import "bootstrap";
+@import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
 
 /* font-family: "MuseoSansRegular"; */
 @font-face {
@@ -441,3 +442,21 @@ $container-max-widths: (
 	background-color: transparent;
 	color: white;
 }
+
+.wysihtml5-toolbar{
+	max-width: 700px;
+	.btn{
+		border-radius: 1.25rem;
+		font-weight: 100!important;
+		color: white;
+		background-color: #ccc;
+		font-size: 13px;
+	}
+	.current-font{
+		color: white;
+		font-size: 13px;
+	}
+}
+
+ul.wysihtml5-toolbar li a[title="Insert image"] { background-image: "assets/logo.png" }
+ul.wysihtml5-toolbar li.dropdown { display: none; }
