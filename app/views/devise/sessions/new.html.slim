@@ -1,15 +1,28 @@
-.container
-	.col-md-4
-		.input
-			= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
-	  			.form-inputs
-	    		= f.input :email, required: false, autofocus: true 
-	    		= f.input :password, required: false 
-	    		= f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
-	  
+.rules-page
+	.background__filter
+	= image_tag('backdrop.jpeg', class: 'background__img')
 
-	  			.form-actions
-	    			= f.button :submit, "Log in" 
+.sign-up__wrap
+	.form__wrap
+		.registration_title
+			| Это Mindy
+		.registration_hello
+			| #хак консалтинга
 
-		= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
-		<!-- = render "devise/shared/links" -->
+		.row
+			.col.s12
+				.sign-up__title
+					| Зарегистрироваться через
+		.row.sign-up__social
+			= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
+
+/ = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
+	
+/ 	= f.input :email, required: false, autofocus: true 
+/ 	= f.input :password, required: false 
+/ 	= f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
+/ 	.form-actions
+/ 		= f.button :submit, "Log in" 
+
+
+/ <!-- = render "devise/shared/links" -->

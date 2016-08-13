@@ -1,3 +1,65 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.rules-page {
+
+  .background__img {
+    position: fixed;
+    width: 1920px;
+    left: 50%;
+    z-index: -1;
+    height: 960px;
+    transform: translateX(-50%);
+    top: 0px;
+  }
+  .background__filter {
+    z-index: 1;
+  }
+}
+
+
+
+
+.sign-up__wrap {
+
+	margin-top: 100px;
+	width: 100%;
+	position: absolute;
+	padding-right: 20px;
+	padding-left: 20px;
+
+ 	
+  .form__wrap {
+    background-color: rgba(255,255,255,.9);
+    color: black;
+    max-width: 410px;
+    text-align: center;
+    //box-shadow: 0 0 10px 0 #0A0707;
+    position: relative;
+    z-index: 2;
+    padding: 1px 30px;
+    margin: 0 auto;
+    min-height: 300px;
+  }
+
+  .registration_hello{
+    font-weight: 600;
+    font-size: 15px;
+    border-left: 2px grey solid;
+    margin-bottom: 20px;
+    color: grey;
+    margin-top: -10px;
+    text-align: left;
+    line-height: 1.4;
+    padding-left: 35px;
+  }
+  .registration_title{
+    font-weight: 800;
+    font-size: 20px;
+    padding: 30px 0;
+    line-height: 1.1;
+  }
+
+}

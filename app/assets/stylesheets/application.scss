@@ -925,17 +925,17 @@ margin-right: 10px;
 }
 
 .notice {
-	color: #1BB645;
-	padding-top: 50px;
+	color: white;
 	position: inherit;
 	text-align: center;
 	position: fixed;
-	top: 0;
+	top: 72px;
     left: 0;
 	width: 100%;
     text-align: center;
     height: 45px;
-	z-index: -1;
+	z-index: 5;
+	display: none;
 }
 
 
