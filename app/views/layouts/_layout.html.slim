@@ -1,4 +1,7 @@
 .col-md-4
-	.layout_card_name
-		
-	.layout_card_description
+	.layout_card_wrap
+		.layout_card_name
+			= link_to layout.name, layout
+			
+		.layout_card_description
+			= layout.description

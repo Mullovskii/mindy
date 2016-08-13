@@ -10,6 +10,7 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
+    @layouts = Layout.where(section_id: @section.id)
   end
 
   # GET /sections/new
