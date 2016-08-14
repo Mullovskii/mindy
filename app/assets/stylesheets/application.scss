@@ -182,6 +182,13 @@ a.btn{
     		margin-bottom: -6px;
     	}
 
+    	li.fb{
+    		border-right: none;
+    		margin-left: 10px;
+    		display: inline-block;
+    		margin-bottom: -6px;
+    	}
+
     	li.name{
     		
     		padding-right: 20px;
@@ -206,6 +213,13 @@ a.btn{
 	border-radius: 50%;
 	width: 40px;
 	height: 40px;
+	margin-top: -6px;
+}
+
+.fb-small{
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
 	margin-top: -6px;
 }
 
@@ -938,6 +952,9 @@ margin-right: 10px;
 	display: none;
 }
 
+.fb{
+	max-width: 200px;
+}
 
 /*.youtube-container { display: block; margin: 20px auto; width: 100%; }
 .youtube-player {padding-bottom: 56.25%; overflow: hidden; position: relative; width: 100%; height: 100%; cursor: pointer; display: block; }

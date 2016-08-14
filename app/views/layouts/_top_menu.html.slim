@@ -13,3 +13,8 @@
 						= link_to(image_tag(current_user.image, class: "avatar"), current_user)
 					li.name = link_to current_user.name, current_user
 					li.out = link_to "Выйти", destroy_user_session_path, method: :delete
+			- else
+				ul
+					li.out Войти
+					li.fb
+						= link_to(image_tag('fb-icon.png', class: "fb-small"), user_facebook_omniauth_authorize_path)
