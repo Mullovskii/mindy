@@ -14,8 +14,9 @@
 	/ 			= link_to (image_tag "micro.png", class: "section_image"), section
 	/ 			= link_to (section.name), section, class: "section_name_card"
 			/= link_to section.name, section
-	.child_wrap
-		- section.child_sections.each do |s|
-			.child_section_name
-				= render partial: "sections/child_section", locals: {section: s}	
-			
+	- unless section.child_sections.empty?
+		.child_wrap
+			- section.child_sections.each do |s|
+				.child_section_name
+					= render partial: "sections/child_section", locals: {section: s}	
+				

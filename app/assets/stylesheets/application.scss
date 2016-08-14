@@ -16,6 +16,7 @@
 
 @import "bootstrap";
 @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+/*@import "variables";*/
 
 /* font-family: "MuseoSansRegular"; */
 @font-face {
@@ -107,7 +108,9 @@ $container-max-widths: (
 	font-weight: 100;
 	color: white;
 	background-color: #1BB645;
-	
+	&.grey{
+		background-color: grey;
+	}
 }
 a.btn{
 		color: white;
@@ -128,6 +131,15 @@ a.btn{
 	@media(min-width: 768px){
     	width: 100%;
   	}
+}
+
+
+
+.want_more_wrap{
+	margin-top: 20px;
+	text-align: center;
+	color: #1bb645;
+	font-weight: 300;
 }
 
 .top_logo{
@@ -201,7 +213,7 @@ a.btn{
     	}
     	li.out{
     		color: #ccc;
-    		font-weight: 700;
+    		font-weight: 500;
     		border-right: none;
     		padding-left: 20px;
     		display: inline-block;
@@ -252,6 +264,12 @@ a.btn{
     	height: 200px;
 		width: 100%;
   	}
+  	&.blue{
+  		background-color: #4A90E2;
+  		.text_wrap{
+  			padding-top: 30px;
+  		}
+  	}
 }
 
 .text_wrap{
@@ -276,6 +294,9 @@ a.btn{
 	padding-left: 20px;
 	@media(min-width: 768px){
     	font-size: 30px;
+  	}
+  	&.article{
+  		font-size: 22px;
   	}
 }
 
@@ -315,6 +336,17 @@ a.btn{
 	text-align: center;
 	position: relative;
 	z-index: 1;
+	&.main_page{
+		margin-top: 0px;
+	}
+}
+
+.more_link{
+	color: #ec971f !important;
+}
+
+.more_link_main_page{
+	color: #ec971f !important;
 }
 
 .back_wrap{
@@ -329,6 +361,10 @@ a.btn{
 	}
 	img{
 		margin-right: 10px;
+	}
+	&.knowledge{
+		font-weight: 100;
+		color: rgba(221, 221, 221, 0.44);
 	}
 	
 }
@@ -362,7 +398,7 @@ a.btn{
 	font-weight: 700;
 	padding-top: 20px;
 	a{
-		color: #55595c;
+		color: #373a3c;
 	}
 }
 
@@ -611,6 +647,21 @@ ul.wysihtml5-toolbar li a[title="Ordered list"].btn.wysihtml5-command-active {
 
 }
 
+ul.wysihtml5-toolbar li a[title="Insert link"].btn.wysihtml5-command-active { 
+	background-image: image-url("link.png");
+	background-size: 50%;
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border: 1px solid rgba(128, 128, 128, 0.71);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position:center;
+	margin-left: -5px;
+	margin-right: 5px;
+
+}
+
 ul.wysihtml5-toolbar li a[title="Insert link"] { 
 	background-image: image-url("link.png");
 	background-size: 50%;
@@ -820,6 +871,17 @@ margin-right: 10px;
 	font-size: 18px;
 	text-align: center;
 	resize: none;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 30px;
+}
+.edit_icon{
+	width: 30px;
+	height: 30px;
+}
+
+.edit_button{
+	float: right;
 }
 
 .layout_description_holder{
@@ -831,7 +893,9 @@ margin-right: 10px;
 	text-align: center;
 	resize: none;
 	min-height: 100px;
-	padding-bottom: 15px;
+	padding-bottom: 60px;
+	padding-right: 15px;
+	padding-left: 15px;
 	@media(min-width: 768px){
     	min-height: 300px;
     	font-size: 14px;
@@ -846,11 +910,15 @@ margin-right: 10px;
 	font-size: 24px;
 	max-height: 50px;
 	resize: none;
+	margin-bottom: 20px;
 }
 
 .layout_content_holder{
 	p{
 		font-weight: 500;
+		font-size: 16px!important;
+		font-family: "MuseoSans"!important;
+
 	}
 	b{
 		font-weight: 700;
@@ -859,7 +927,7 @@ margin-right: 10px;
 	border: none;
 	color: #373a3c;
 	font-weight: 300!important;
-	font-size: 14px!important;
+	font-size: 15px!important;
 	max-height: 50px;
 	resize: none;
 	min-height: 600px;
@@ -909,10 +977,13 @@ margin-right: 10px;
 }
 
 .layout_card_name{
+	margin-top: 10px;
 	a{
 		color: black;
 		font-weight: 700;
-		font-size: 15px;
+		font-size: 17px;
+		line-height: 1;
+
 	}
 }
 
@@ -926,7 +997,7 @@ margin-right: 10px;
 
 .alert {
 	color: #d9534f;
-	padding-top: 50px;
+	padding-top: 42px;
 	position: inherit;
 	text-align: center;
 	position: fixed;
@@ -955,6 +1026,131 @@ margin-right: 10px;
 .fb{
 	max-width: 200px;
 }
+
+.name_time_holder{
+	ul{
+		li{
+			display: inline-block;
+			float: left;
+		}
+	}
+}
+
+.avatar-wrap {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 12px;
+      @media(min-width: 768px){
+        margin-right: 18px;
+      }
+    }
+
+ .author__description {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 72%;
+      margin-top: 0;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .author__name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #373a3c;
+    }
+
+
+    .author__work{
+      line-height: 1.2;
+      margin-top: 5px;
+      color: #b7b7b7;
+      font-size: 14px;
+      font-weight: 300;
+      @media (min-width: 768px) {
+        margin-top: 0px;
+      }
+    }
+
+    .time_posted{
+    	color: #ccc;
+    	font-size: 12px;
+    	margin-bottom: 5px;
+    	margin-top: 5px;
+    }
+
+    .select.form-control:not([size]):not([multiple]){
+    	color: white;
+    	text-transform: uppercase;
+    	background-color: transparent;
+    	border: none;
+    	font-weight: 100;
+    	font-size: 18px;
+    	margin-top: -3px;
+    	
+    }
+
+
+
+    .input.dropdown_bold{
+    	padding: 0 30px;
+    	text-align: center;
+    }
+
+    .big_avatar{
+    	border-radius: 50%;
+    }
+
+    .user_info_wrap{
+    	background-color: #d9534f;
+    	text-align: center;
+    	padding: 40px 20px;
+    }
+
+    .user_name_big{
+    	font-weight: 700;
+    	color: white;
+    	padding: 20px 15px;
+    	font-size: 24px;
+    }
+
+    .user_job_big{
+    	color: white;
+    	font-size: 15px;
+    	margin-top: -15px;
+    }
+
+    .latest_updates{
+    	text-transform: uppercase;
+    	font-size: 12px;
+    	color: #ddd;
+    	font-weight: 100;
+    	text-align: center;
+    	border-top: 1px solid rgba(221, 221, 221, 0.39);
+    	border-bottom: 1px solid rgba(221, 221, 221, 0.39);
+    	padding: 7px 0px;
+    	margin-bottom: 10px;
+    	margin-top: 35px;
+    	&:hover{
+    		color: #f0ad4e;
+    		border-top: 1px solid #f0ad4e;
+    		border-bottom: 1px solid #f0ad4e;
+    	}
+
+    	&.profile{
+    		margin-top: 30px;
+    }
+
+		
+    	&.fields{
+    		margin-top: 30px;
+    		margin-bottom: -10px;
+    	}
+
+    }
+
+
+
+
 
 /*.youtube-container { display: block; margin: 20px auto; width: 100%; }
 .youtube-player {padding-bottom: 56.25%; overflow: hidden; position: relative; width: 100%; height: 100%; cursor: pointer; display: block; }

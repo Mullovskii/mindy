@@ -4,6 +4,9 @@ class UsersController < ApplicationController
 
 
 	def show
+		@avatar = @user.image+'?type=large'
+		@articles = @user.layouts
+		@sections = Section.all
 	end
 
 	def edit

@@ -1,0 +1,24 @@
+.row
+	.col-md-12
+		.user_info_wrap
+			= image_tag(@avatar, class: "big_avatar")
+			.user_name_big
+				= @user.name
+			.user_job_big
+				- if @user_work_history == nil
+					| Эксперт 
+				- else
+					= @user.user_work_history
+.container
+	.row
+		.col-md-12
+			.latest_updates.profile
+				| #{@user.name} написал:
+			
+			.small_sections_wrap.main_page
+				= render @articles, partial: "sections/child_section"
+	.row
+		.col-md-12
+
+			.sections_wrap
+				= render @sections

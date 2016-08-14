@@ -15,7 +15,6 @@ class LayoutsController < ApplicationController
   # GET /layouts/new
   def new
     @layout = Layout.new
-    @layout.section_id = params[:section_id]
   end
 
   # GET /layouts/1/edit
@@ -25,7 +24,8 @@ class LayoutsController < ApplicationController
   # POST /layouts
   # POST /layouts.json
   def create
-    @layout = Layout.new(layout_params)
+    # @layout = Layout.new(layout_params)
+    @layout = current_user.layouts.create(layout_params)
 
     respond_to do |format|
       if @layout.save

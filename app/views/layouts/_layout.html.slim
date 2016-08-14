@@ -1,7 +1,27 @@
 .col-md-4
+
+	/ .time_posted
+	/ 	= time_ago_in_words(layout.created_at) + ' назад' 
 	.layout_card_wrap
+		.avatar-wrap
+			= link_to(image_tag(layout.user.image, class: "avatar"), current_user)
+		.author__description
+			.author__name
+				= link_to layout.user.name, layout.user
+			.author__work
+				- if layout.user.user_work_history == nil
+					| Эксперт 
+				- else
+					= layout.user.user_work_history
+			/ .time_posted
+			/ 	= time_ago_in_words(layout.created_at) + ' назад' 
+
 		.layout_card_name
 			= link_to layout.name, layout
+
+		.time_posted
+			= time_ago_in_words(layout.created_at) + ' ago' 
 			
 		.layout_card_description
-			= layout.description
+			= truncate("#{layout.description}", length: 500, omission: '...')
+			= link_to "  читать >", layout, class: "more_link"

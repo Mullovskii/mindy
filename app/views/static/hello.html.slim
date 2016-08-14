@@ -1,16 +1,47 @@
 .row
 	.col-md-12
-		.header_wrap
+		.header_wrap_small.blue
 			.text_wrap
-				.big_title
-					| Mindy научит вас лушчим методам анализа в марекетинге, финансах и менеджементе
-				.medium_decription
-					| Как подсчитать NPV или построить матрицу BCG? 
-					| Находите лучшие аналитические приемы ведущих консалтинговых агенств и добавляйте свои методологии
+				.back_wrap.knowledge
+					| - Случайное знание -
+
+				- if Layout.all.length >= 1
+					.big_title.article					
+						= link_to @random_article.name, @random_article
+					.medium_decription
+						/ = link_to @random_article.description, @random_article
+						= truncate("#{@random_article.description}", length: 115, omission: '...') { link_to "  читать >", @random_article, class: 'more_link_main_page' }
+				- else
+					.big_title					
+						| Mindy 
+					.medium_decription
+						| Каждый день - больше знаний
 
 .container
 	.row
 		.col-md-12
+			.layouts_group
+					.button_add_layout
+						= link_to "Поделиться знанием", new_layout_path, class: 'btn btn-default'
+
+			.latest_updates
+				= link_to "Свежие знания", layouts_path
+	.row
+		.col-md-12
+			.small_sections_wrap.main_page
+				= render @latest_articles, partial: "sections/child_section"
+	.row
+		.col-md-12
+
+			.want_more_wrap
+				= link_to "Больше свежих знаний >", layouts_path
+			/ button.btn.btn-default aria-label=("Left Align") type="button" 
+  			span.glyphicon.glyphicon-align-left aria-hidden="true" 
+	.row
+		.col-md-12
+			.latest_updates.fields
+				= link_to "Профессиональные области", sections_path
+
 			.sections_wrap
 				= render @sections
 			

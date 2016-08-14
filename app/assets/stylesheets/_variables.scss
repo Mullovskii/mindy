@@ -1,0 +1,22 @@
+// Colors
+$grey:       rgba(0,0,0,0.44);
+$light-grey: rgba(0,0,0,0.05);
+$lighter-grey: rgb(214, 220, 215);
+$black:      rgba(0,0,0,0.8);
+$green:      #1BB645;
+$dark-green: #468c54;
+$light-green: #77CE87;
+$lighter-green: #a9d8b2;
+$red:        #bd3d28;
+$blue: 		#4071e3;
+$light-blue: #6197F4;
+$salad:     #a8d9b0;
+$idea:      #e35e69;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

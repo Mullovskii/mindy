@@ -12,8 +12,14 @@
 			
 	.r_main_wrap
 		.layout_body
+			- if current_user == @layout.user
+				.edit_button
+					= link_to(image_tag("edit.png", class: "edit_icon"), edit_layout_path(@layout))
+					
 			.layout_heading_holder
 				= @layout.heading
+
+
 
 			.layout_content_holder
 				= raw safe @layout.content

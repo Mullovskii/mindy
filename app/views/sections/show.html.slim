@@ -18,10 +18,10 @@
 			- if @section.child_sections.empty?
 				.layouts_group
 					.button_add_layout
-						= link_to "Добавить шаблон", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
-					.little_description
+						= link_to "Поделиться знанием", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
+					/ .little_description
 						
-						| Шаблон - это статья, показывающая, как лучше что-то считать или анализировать. Вы можете создать шаблон с формами, куда другие пользователи будут вносить данные и выгружать результаты. Круто.
+					/ 	| Шаблон - это статья, показывающая, как лучше что-то считать или анализировать. Вы можете создать шаблон с формами, куда другие пользователи будут вносить данные и выгружать результаты. Круто.
 
 
 				.layouts_grid
