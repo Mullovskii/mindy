@@ -1,0 +1,39 @@
+.main_body
+	.l_sidebar.choose_favors
+		.text_block.choose_favors
+			.user_info_wrap.choose_favors
+				= image_tag(@avatar, class: "big_avatar")
+
+
+			
+	.r_main_wrap.choose_favors
+		.layout_body.choose_favors
+			.heading_find_interest
+				| Выберите интересующие вас области и отрасли:
+
+			.layout_content_holder.choose_favor
+				.row
+					.small_sections_wrap
+						- @sections.each do |section|
+							.col-md-4
+								.section_main_wrap.choose_favor
+									.section_image_wrap.choose_favor
+										- if section.id < 21
+											= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), section
+										- else
+											= link_to (image_tag "0.png", class: "section_image"), section
+									.section_name
+										= link_to (section.name), section
+						
+						/ = render @sections, partial: "sections/child_section"
+
+
+			
+
+				/ - if youtube_url?(safe @layout.content)
+    /             	.youtube-container
+    /                 	= embed get_url(safe @layout.content)
+			
+
+
+

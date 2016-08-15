@@ -1,3 +1,27 @@
+.navbar.navbar-inverse.navbar-fixed-top
+ 	.navbar-header
+ 		button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+			span.icon-bar
+			span.icon-bar
+      		span.icon-bar
+      	/ .logo.center
+		= link_to(image_tag("logo.png", class: "center_logo"), root_path)
+	.navbar-collapse.collapse
+    	ul.nav.navbar-nav
+			li.active
+				= link_to "Все сферы", sections_path
+			li
+				= link_to "Все индустрии", fields_path
+			li
+				= link_to "Лента", layouts_path
+			li
+				= link_to "Искать пользователей", users_path
+			li.profile
+				= link_to "Моя стена", user_path(current_user)
+
+				
+
+
 .menu_wrap
 	.col-md-4
 		.subjects
@@ -23,23 +47,20 @@
 				    	span.caret
 				    ul.dropdown-menu role="menu" 
 
-						- @main_sections.each do |s|
+						- @fields.each do |f|
 							li.main_field_link
-								= link_to s.name, s
-								- unless Section.where(parent_section_id: s.id).empty?
-									ul.sub_link
-										- Section.where(parent_section_id: s.id).each do |m|
-											li.sub 
-												= link_to m.name, m
+								= link_to f.name, f
+								/ - unless Section.where(parent_section_id: s.id).empty?
+								/ 	ul.sub_link
+								/ 		- Section.where(parent_section_id: s.id).each do |m|
+								/ 			li.sub 
+								/ 				= link_to m.name, m
 
 				li
 					= link_to "Лента", layouts_path
 				li 
-					= link_to(image_tag("users.png", class: "users_icon"), users_path)
+					= link_to(image_tag("users_black.png", class: "users_icon"), users_path)
 
-
-				    	
-			/ | Сферы
 		
 	.col-md-4
 		.logo_wrap.center
@@ -54,6 +75,6 @@
 					li.out = link_to "Выйти", destroy_user_session_path, method: :delete
 			- else
 				ul
-					li.out Войти
+					li.out Войти через
 					li.fb
 						= link_to(image_tag('fb-icon.png', class: "fb-small"), user_facebook_omniauth_authorize_path)

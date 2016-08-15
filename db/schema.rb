@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813183808) do
+ActiveRecord::Schema.define(version: 20160815125456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favors", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "section_id"
+    t.integer  "field_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "layouts", force: :cascade do |t|
     t.integer  "user_id"
@@ -55,6 +71,8 @@ ActiveRecord::Schema.define(version: 20160813183808) do
     t.string   "nickname"
     t.string   "image"
     t.string   "user_work_history"
+    t.string   "job_name"
+    t.integer  "field_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
