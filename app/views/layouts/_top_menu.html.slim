@@ -1,7 +1,46 @@
 .menu_wrap
 	.col-md-4
 		.subjects
-			| Сферы
+			ul
+			  	li.dropdown
+				    a.dropdown-toggle data-toggle="dropdown" href="#" 
+				    	| Сферы
+				    	span.caret
+				    ul.dropdown-menu role="menu" 
+
+						- @main_sections.each do |s|
+							li.main_field_link
+								= link_to s.name, s
+								- unless Section.where(parent_section_id: s.id).empty?
+									ul.sub_link
+										- Section.where(parent_section_id: s.id).each do |m|
+											li.sub 
+												= link_to m.name, m
+				
+				li.dropdown
+				    a.dropdown-toggle data-toggle="dropdown" href="#" 
+				    	| Индустрии
+				    	span.caret
+				    ul.dropdown-menu role="menu" 
+
+						- @main_sections.each do |s|
+							li.main_field_link
+								= link_to s.name, s
+								- unless Section.where(parent_section_id: s.id).empty?
+									ul.sub_link
+										- Section.where(parent_section_id: s.id).each do |m|
+											li.sub 
+												= link_to m.name, m
+
+				li
+					= link_to "Лента", layouts_path
+				li 
+					= link_to(image_tag("users.png", class: "users_icon"), users_path)
+
+
+				    	
+			/ | Сферы
+		
 	.col-md-4
 		.logo_wrap.center
 			= link_to(image_tag("logo.png", class: "top_logo"), root_path)

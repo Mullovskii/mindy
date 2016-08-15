@@ -10,12 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
+//= require bootstrap.js
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 //= require bootstrap-wysihtml5
+
 
 $(document).on('page:load', function(){
   window['rangy'].initialized = false
@@ -44,7 +48,6 @@ $(document).on('page:load', function(){
 
 	//     }
 	// };
-
  
 });
 

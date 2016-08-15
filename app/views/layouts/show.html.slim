@@ -23,6 +23,9 @@
 
 			.layout_content_holder
 				= raw safe @layout.content
+
+			
+
 				/ - if youtube_url?(safe @layout.content)
     /             	.youtube-container
     /                 	= embed get_url(safe @layout.content)
