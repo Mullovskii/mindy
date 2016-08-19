@@ -12,9 +12,11 @@
 //
 
 
-//= require jquery
 //= require bootstrap.js
+//= require jquery
 //= require jquery_ujs
+
+
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
@@ -22,7 +24,7 @@
 
 
 $(document).ready(function () {
-			  $(".navbar-toggle").on("click", function () {
-				    $(this).toggleClass("active");
-			  });
-		});
+			  // $(".navbar-toggle").on("click", function () {
+				 //    $(this).toggleClass("active");
+			  // });
+});

@@ -143,11 +143,11 @@ a.btn{
 }
 
 .top_logo{
-	max-width: 100px;
-	padding-top: 10px;
-	padding-left: 10px;
+	max-width: 90px;
 	vertical-align: middle;
-	@media(min-width: 768px){
+
+	@media(min-width: 833px){
+		max-width: 100px;
     	padding-top: 15px;
     	padding-bottom: 6px;
     	max-width: 100px;
@@ -158,14 +158,18 @@ a.btn{
 	display: inline-block;
 	font-weight: 900;
 	padding-top: 20px;
-	display: none;
 	ul{
+		margin: 0;
 		li{
 			display: inline-block;
 			margin-right: 20px;
+			display: none;
+			@media (min-width: 833px) {
+      			display: inline-block;
+    		}
 		}
 	}
-	@media (min-width: 1330px) {
+	@media (min-width: 833px) {
       padding-top: 20px;
       display: inherit;
     }
@@ -175,16 +179,18 @@ a.btn{
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-    margin: 0 auto;
 	text-align: center;
-	margin-left: -10px;
-	display: inline-block;
-    height: 100%;
+    height: 90%;
     vertical-align: middle;
-    z-index: 30000;
-    display: none;
-    @media (min-width: 1330px) {
-      display: inherit;
+    z-index: 30;
+    margin-top: -42px;
+   /* position: absolute;
+    	display: table-cell;
+		text-align: center;*/
+    @media (min-width: 833px) {
+		height: 100%;
+		/*position: inherit;*/
+		margin-top: -48px;
     }
 
 }
@@ -202,17 +208,22 @@ a.btn{
 .user_wrap{
 	display: inline-block;
 	font-weight: 900;
-	 display: none;
-	@media (min-width: 768px) {
+	float: right;
+	margin-top: -26px;
+	@media (min-width: 833px) {
       padding-top: 20px;
       display: inherit;
+      margin-top: -55px;
     }
     ul{
     	li.avatar{
     		border-right: none;
-    		margin-right: 10px;
+    		margin-right: -25px;
     		display: inline-block;
     		margin-bottom: -6px;
+    		@media (min-width: 833px) {
+		      margin-right: 10px;
+		    }
     	}
 
     	li.fb{
@@ -228,7 +239,6 @@ a.btn{
     		border-right: 1px solid #ddd;
     		display: none;
     		@media (min-width: 1200px) {
-      			
       			display: inline-block;
     		}
     	}
@@ -237,16 +247,23 @@ a.btn{
     		font-weight: 500;
     		border-right: none;
     		padding-left: 20px;
-    		display: inline-block;
+    		display: none;
+    		@media (min-width: 833px) {
+      			display: inline-block;
+    		}
     	}
     }
 }
 
 .avatar{
 	border-radius: 50%;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	margin-top: -6px;
+	@media (min-width: 833px) {
+      	width: 40px;
+		height: 40px;
+    }
 }
 
 .fb-small{
@@ -427,13 +444,14 @@ a.btn{
 	background-color: #f7f4f4;
 	border-radius: 10px;
 	padding-bottom: 20px;
-	margin-bottom: 10px;
+	margin-top: -20px;
 }
 
 .section_main_wrap{
 	position: relative;
   	overflow: hidden;
   	height: 100px;
+  	margin-bottom: 20px;
   	&.choose_favor{
   		margin-bottom: 20px;
   	}
@@ -482,10 +500,10 @@ a.btn{
 }
 
 .main_body{
-	padding-top: 6px;
+	/*padding-top: 6px;
 	@media (min-width: 768px) {
       padding-top: 65px;
-    }
+    }*/
 	
 }
 
@@ -1283,6 +1301,13 @@ margin-right: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+.navbar{
+	margin-top: 5px;
+	margin-bottom: -7px;
+	@media (min-width: 768px) {
+		margin-bottom: -10px;
+	}
+}
 
 .navbar-collapse.collapse.in{
 	font-family: "MuseoSans";
@@ -1291,8 +1316,8 @@ margin-right: 10px;
 	min-width: 300px!important;
 	color: black;
 	background-color: #FAFAFA !important;
-	border-top: 1px solid #D6D8DA;
-	border-bottom: 1px solid #D6D8DA;
+	/*border-top: 1px solid #D6D8DA;
+	border-bottom: 1px solid #D6D8DA;*/
 	left: 0!important;
 	opacity: 0.98 !important;
 	margin-top: 2px;
@@ -1309,13 +1334,11 @@ button.navbar-toggle{
 	background-color: transparent;
 	border: none;
 	
-	@media(min-width: 1330px){
+	@media(min-width: 833px){
     	display: none;
   	}
-  	@media(min-width: 768px){
-    	margin: 14px;
-  	}
 }
+
 .navbar-toggle .icon-bar {
     display: block;
     width: 22px;
