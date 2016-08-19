@@ -1,0 +1,1 @@
+$("#name_<%= @section.id %>").replaceWith('<%= j link_to @section.name, favors_path(:user_id => current_user.id, :section_id => @section.id, :field_id => nil), :method => :post, :remote => true %>');

@@ -7,10 +7,10 @@ class StaticController < ApplicationController
 	end
 
 	def choose_favors
+		@favor = Favor.new
 		@sections = Section.all
 		@fields = Field.all
 		@avatar = current_user.image+'?type=large'
-
 	end
 
 end

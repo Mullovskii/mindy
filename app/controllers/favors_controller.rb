@@ -24,15 +24,19 @@ class FavorsController < ApplicationController
   # POST /favors
   # POST /favors.json
   def create
-    @favor = Favor.new(favor_params)
-
+    # @favor = Favor.new(favor_params)
+    @favor = current_user.favors.create(user_id: params[:user_id], section_id: params[:section_id])
+    @section = @favor.section
     respond_to do |format|
-      if @favor.save
-        format.html { redirect_to @favor, notice: 'Favor was successfully created.' }
+      if @favor.save(:validate => false)
+        format.html { redirect_to :back, notice: 'Favor was successfully created.' }
+        format.js { flash.now[:success] = 'Выбрано' }
         format.json { render :show, status: :created, location: @favor }
       else
         format.html { render :new }
         format.json { render json: @favor.errors, status: :unprocessable_entity }
+        format.js { flash.now[:success] = 'Не выбрано' }
+
       end
     end
   end
@@ -51,13 +55,17 @@ class FavorsController < ApplicationController
     end
   end
 
+
   # DELETE /favors/1
   # DELETE /favors/1.json
   def destroy
     @favor.destroy
+    @section = @favor.section
+    
     respond_to do |format|
       format.html { redirect_to favors_url, notice: 'Favor was successfully destroyed.' }
       format.json { head :no_content }
+      format.js { flash.now[:success] = 'Не выбрано' }
     end
   end
 

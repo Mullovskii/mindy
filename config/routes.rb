@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :favors
+
+  resources :favors do
+    collection do 
+    end
+  end
+
   resources :fields
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
@@ -9,6 +14,7 @@ Rails.application.routes.draw do
   root to: 'static#hello'
 
   get 'static/choose_favors', to: 'static#choose_favors'
+
 
  #  devise_scope :user do
  #  	delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

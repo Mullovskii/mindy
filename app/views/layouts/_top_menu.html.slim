@@ -94,10 +94,7 @@ nav.navbar.navbar-default
 			= link_to "Все пользователи", users_path
 		
 		- if current_user
-			li
-				= link_to(image_tag(current_user.image, class: "avatar"), current_user)
-				= link_to current_user.name, current_user
-			li
+			li.out_mobile
 				= link_to "Выйти", destroy_user_session_path, method: :delete
 
           	
