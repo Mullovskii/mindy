@@ -42,7 +42,7 @@
 									= image_tag("digital.png", class: "rating_icon") 
 								li.percentage
 									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Маркетинг"}.length
-									= link_to ">>", "#", class: 'more'
+									= link_to ">>", ratings_path, class: 'more'
 									
 .container
 	- if @user == current_user

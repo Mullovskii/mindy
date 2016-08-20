@@ -1,36 +1,37 @@
-.col-md-4
-	.user_card_avatar
-		- avatar = user.image + '?type=large'
-		= link_to(image_tag( avatar, class: "avatar_card"), user)
-	.user_card_name
-		= user.name
-	.user_card_job
-		- if user.user_work_history == nil
-			| Эксперт 
-		- else
-			= user.user_work_history + ""
-			|   из 
-			= user.job_name
-	.rating_field_name
-		ul
-			li.icon
-				= image_tag("manager.png", class: "rating_icon") 
-			li.percentage
-				= user.layouts.map {|l| l.section.name }.select {|s| s == "Менеджмент"}.length
+.col-md-3
+	.user_card_wrap
+		.user_card_avatar
+			- avatar = user.image + '?type=large'
+			= link_to(image_tag( avatar, class: "avatar_card"), user)
+		.user_card_name
+			= user.name
+		.user_card_job
+			- if user.user_work_history == nil
+				| Эксперт 
+			- else
+				= user.user_work_history + ""
+				|   из 
+				= user.job_name
+		/ .rating_field_name
+		/ 	ul
+		/ 		li.icon
+		/ 			= image_tag("manager.png", class: "rating_icon") 
+		/ 		li.percentage
+		/ 			= user.layouts.map {|l| l.section.name }.select {|s| s == "Менеджмент"}.length
 
-			li.icon
-				= image_tag("startup.png", class: "rating_icon") 
-			li.percentage
-				= user.layouts.map {|l| l.section.name }.select {|s| s == "Стартапы"}.length
+		/ 		li.icon
+		/ 			= image_tag("startup.png", class: "rating_icon") 
+		/ 		li.percentage
+		/ 			= user.layouts.map {|l| l.section.name }.select {|s| s == "Стартапы"}.length
 
-			li.icon
-				= image_tag("finance.png", class: "rating_icon") 
-			li.percentage
-				= user.layouts.map {|l| l.section.name }.select {|s| s == "Финансы"}.length
-				
-			li.icon
-				= image_tag("digital.png", class: "rating_icon") 
-			li.percentage
-				= user.layouts.map {|l| l.section.name }.select {|s| s == "Маркетинг"}.length
-				= link_to ">>", "#", class: 'more'
+		/ 		li.icon
+		/ 			= image_tag("finance.png", class: "rating_icon") 
+		/ 		li.percentage
+		/ 			= user.layouts.map {|l| l.section.name }.select {|s| s == "Финансы"}.length
+					
+		/ 		li.icon
+		/ 			= image_tag("digital.png", class: "rating_icon") 
+		/ 		li.percentage
+		/ 			= user.layouts.map {|l| l.section.name }.select {|s| s == "Маркетинг"}.length
+		/ 			= link_to ">>", "#", class: 'more'
 

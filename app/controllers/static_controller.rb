@@ -21,4 +21,10 @@ class StaticController < ApplicationController
 		@chosen_industries = current_user.favors.where.not(field_id: nil)
 	end
 
+	def ratings
+		@user = current_user
+		@avatar = @user.image+'?type=large'
+		
+	end
+
 end

@@ -3,7 +3,7 @@
 		.text_block
 
 			.back_wrap_layout
-				= link_to image_tag('back_icon.png', class: "back_icon") + Section.find(@layout.section_id).name, section_path(@layout.section_id)
+				= link_to image_tag('back_icon.png', class: "back_icon") + @layout.section.name, @layout.section
 		
 			.layout_name_holder
 				= @layout.name
@@ -16,6 +16,8 @@
 			- if current_user == @layout.user
 				.edit_button
 					= link_to(image_tag("edit.png", class: "edit_icon"), edit_layout_path(@layout))
+					= link_to(image_tag("delete_article.png", class: "edit_icon"), layout_path(@layout), method: :delete)
+
 					
 			.layout_heading_holder
 				= @layout.heading

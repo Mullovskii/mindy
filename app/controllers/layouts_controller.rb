@@ -41,8 +41,9 @@ class LayoutsController < ApplicationController
   # PATCH/PUT /layouts/1
   # PATCH/PUT /layouts/1.json
   def update
+    @layout.update(layout_params)
     respond_to do |format|
-      if @layout.update(layout_params)
+      if @layout.save(:validate => false)
         format.html { redirect_to @layout, notice: 'Layout was successfully updated.' }
         format.json { render :show, status: :ok, location: @layout }
       else
@@ -70,6 +71,6 @@ class LayoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def layout_params
-      params.require(:layout).permit(:user_id, :heading, :section_id,  :name, :description, :image_url, :content)
+      params.require(:layout).permit(:user_id, :heading, :section_id, :field_id,  :name, :description, :image_url, :content)
     end
 end

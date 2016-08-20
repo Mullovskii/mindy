@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
 	def show
 		@avatar = @user.image+'?type=large'
-		@articles = @user.layouts
+		@articles = @user.layouts.reverse
 		@sections = @user.sections
 		@fields = @user.fields
 	end

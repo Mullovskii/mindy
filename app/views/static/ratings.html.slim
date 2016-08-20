@@ -1,0 +1,48 @@
+.big_wrap
+	.container
+		.row
+			.col-md-12
+				.edit_heading
+					| Ваши очки:
+				.edit_profile.ratings
+					= image_tag(@avatar, class: "avatar_card")
+					.explain_rating
+						| Очки рассчитываются из того, сколько статей вы написали и сколько прочли
+					
+					table.ratings
+						ul
+							tr
+								td.name
+									|Менеджмент:
+								td.icon 
+									= image_tag("manager.png", class: "rating_icon_explain")
+								td.percentage 
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Менеджмент"}.length
+							tr
+								td.name
+									| Бизнес:
+								td.icon 
+									= image_tag("startup.png", class: "rating_icon_explain") 
+								td.percentage 
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Стартапы"}.length
+
+							tr
+								td.name
+									| Финансы:
+								td.icon 
+									= image_tag("finance.png", class: "rating_icon_explain") 
+								td.percentage 
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Финансы"}.length
+
+							tr
+								td.name
+									| Маркетинг:
+								td.icon 
+									= image_tag("digital.png", class: "rating_icon_explain") 
+								td.percentage 
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Маркетинг"}.length
+									
+									
+									
+									
+							

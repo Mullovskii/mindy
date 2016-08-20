@@ -4,7 +4,7 @@
 			.text_wrap
 				.back_wrap
 					- if @section.parent_section.nil?
-						= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем предметам", root_path
+						= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем сферам", root_path
 					- else
 						= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
 
@@ -19,10 +19,6 @@
 				.layouts_group
 					.button_add_layout
 						= link_to "Поделиться знанием", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
-					/ .little_description
-						
-					/ 	| Шаблон - это статья, показывающая, как лучше что-то считать или анализировать. Вы можете создать шаблон с формами, куда другие пользователи будут вносить данные и выгружать результаты. Круто.
-
 
 				.layouts_grid
 					= render @layouts
@@ -31,3 +27,9 @@
 			-else
 				.small_sections_wrap
 					= render @section.child_sections, partial: "sections/child_section"
+
+				.row
+					.col-md-12
+
+						.layouts_grid
+							= render @layouts

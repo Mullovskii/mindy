@@ -1,5 +1,5 @@
 class FieldsController < ApplicationController
-  before_action :set_field, only: [:show, :edit, :update, :destroy]
+  before_action :set_field, only: [:edit, :update, :destroy]
 
   # GET /fields
   # GET /fields.json
@@ -10,6 +10,8 @@ class FieldsController < ApplicationController
   # GET /fields/1
   # GET /fields/1.json
   def show
+    @section = Field.find(params[:id])
+    @layouts = @section.layouts
   end
 
   # GET /fields/new

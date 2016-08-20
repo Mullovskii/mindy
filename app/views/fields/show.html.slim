@@ -1,0 +1,21 @@
+.row
+	.col-md-12
+		.header_wrap_small
+			.text_wrap
+				.back_wrap
+					= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем индустриям", root_path
+
+				.section_header_title
+					= @section.name
+			
+
+.container
+	.row
+		.col-md-12
+			
+			.layouts_group
+				.button_add_layout
+					= link_to "Поделиться знанием", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
+
+			.layouts_grid
+				= render @layouts

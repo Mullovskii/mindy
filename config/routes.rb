@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'fields_preferences', to: 'static#choose_favors'
   get 'industries_preferences', to: 'static#choose_industries'
+  get 'ratings', to: 'static#ratings'
+
 
 
  #  devise_scope :user do
