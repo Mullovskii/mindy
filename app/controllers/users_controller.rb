@@ -15,6 +15,11 @@ class UsersController < ApplicationController
 
 	end
 
+	def index
+		@users = User.all
+		
+	end
+
 
 	def update
 		@avatar = @user.image+'?type=large'
