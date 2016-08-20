@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :sections
   root to: 'static#hello'
 
-  get 'static/choose_favors', to: 'static#choose_favors'
+  get 'fields_preferences', to: 'static#choose_favors'
+  get 'industries_preferences', to: 'static#choose_industries'
 
 
  #  devise_scope :user do

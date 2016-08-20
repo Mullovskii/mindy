@@ -25,8 +25,12 @@ class FavorsController < ApplicationController
   # POST /favors.json
   def create
     # @favor = Favor.new(favor_params)
-    @favor = current_user.favors.create(user_id: params[:user_id], section_id: params[:section_id])
-    @section = @favor.section
+    @favor = current_user.favors.create(user_id: params[:user_id], section_id: params[:section_id], field_id: params[:field_id])
+    if @favor.field.nil?
+      @section = @favor.section
+    else
+      @section = @favor.field
+    end
     respond_to do |format|
       if @favor.save(:validate => false)
         format.html { redirect_to :back, notice: 'Favor was successfully created.' }
@@ -60,7 +64,11 @@ class FavorsController < ApplicationController
   # DELETE /favors/1.json
   def destroy
     @favor.destroy
-    @section = @favor.section
+    if @favor.field.nil?
+      @section = @favor.section
+    else
+      @section = @favor.field
+    end
     
     respond_to do |format|
       format.html { redirect_to favors_url, notice: 'Favor was successfully destroyed.' }

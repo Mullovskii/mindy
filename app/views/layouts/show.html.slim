@@ -1,6 +1,7 @@
 .main_body
 	.l_sidebar
 		.text_block
+
 			.back_wrap_layout
 				= link_to image_tag('back_icon.png', class: "back_icon") + Section.find(@layout.section_id).name, section_path(@layout.section_id)
 		

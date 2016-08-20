@@ -6,6 +6,7 @@ class User < ApplicationRecord
   belongs_to :field
   has_many :favors
   has_many :sections, through: :favors
+  has_many :fields, through: :favors
   
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,

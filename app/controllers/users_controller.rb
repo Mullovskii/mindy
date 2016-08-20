@@ -6,21 +6,27 @@ class UsersController < ApplicationController
 	def show
 		@avatar = @user.image+'?type=large'
 		@articles = @user.layouts
-		@sections = Section.all
+		@sections = @user.sections
+		@fields = @user.fields
 	end
 
 	def edit
+		@avatar = @user.image+'?type=large'
+
 	end
 
 
 	def update
+		@avatar = @user.image+'?type=large'
+		@user.update(user_params)
+
 		respond_to do |format|
-			if @user.update(layout_params)
-					format.html { redirect_to @layout, notice: 'Layout was successfully updated.' }
-					format.json { render :show, status: :ok, location: @layout }
+			if @user.save(:validate => false)
+					format.html { redirect_to @user, notice: 'Инфо обновлена.' }
+					format.json { render :show, status: :ok, location: @user }
 				else
 					format.html { render :edit }
-					format.json { render json: @layout.errors, status: :unprocessable_entity }
+					format.json { render json: @user.errors, status: :unprocessable_entity }
 			end
 		end
 	end
@@ -32,7 +38,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :user_work_history, :about, :image)
+      params.require(:user).permit(:name, :user_work_history, :about, :image, :job_name)
     end
 
 end

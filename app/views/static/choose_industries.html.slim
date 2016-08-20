@@ -1,0 +1,58 @@
+.main_body
+	.l_sidebar.choose_favors
+		.text_block.choose_favors
+			.user_info_wrap.choose_favors
+				= image_tag(@avatar, class: "big_avatar")
+			.chosen_favors
+				ul
+					- @chosen_industries.each do |f|
+						div id='chosen_#{f.field.id}' 
+							li
+								= f.field.name
+								- @section = f
+
+
+			
+	.r_main_wrap.choose_favors
+		.layout_body.choose_favors
+			.heading_find_interest
+				| Отметьте интересующие вас отрасли:
+
+			.layout_content_holder.choose_favor
+				.row
+					.small_sections_wrap
+						- @sections.each do |section|
+							.col-md-4
+								div id='section_#{section.id}'
+									.section_main_wrap.choose_favor
+										.section_image_wrap.choose_favor
+											- if section.id < 21
+												- if Favor.where(section_id: section, user_id: current_user).first
+													= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favor_path(Favor.where(field_id: section, user_id: current_user).first), :method => :delete, :remote => true
+												- else
+													= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :field_id => section.id), :method => :post, :remote => true
+											- else
+												- if Favor.where(field_id: section, user_id: current_user).first
+													= link_to (image_tag "0.jpeg", class: "section_image"), favor_path(Favor.where(field_id: section, user_id: current_user).first), :method => :delete, :remote => true
+												- else
+													= link_to (image_tag "0.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :field_id => section.id, :field_id => nil), :method => :post, :remote => true
+
+										
+										.section_name
+											div id='name_#{section.id}'
+												- if Favor.where(field_id: section.id, user_id: current_user.id).first
+													= image_tag "delete.png", class: "delete_img"
+													= link_to section.name, favor_path(Favor.where(field_id: section, user_id: current_user).first), :method => :delete, :remote => true
+												- else
+													= link_to section.name, favors_path(:user_id => current_user.id, :field_id => section.id), :method => :post, :remote => true
+				.row 
+					.col-md-12
+						.further_button
+							= link_to "Завершить", root_path, class: 'btn'
+							
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+.big_wrap
+	.container
+		.row
+			.col-md-12
+				.edit_heading
+					| Ваша деятельность:
+				.edit_profile
+					= image_tag(@avatar, class: "big_avatar")
+
+					.user_name_big.black
+						= @user.name
+
+					.edit_form_wrap
+						= simple_form_for @user, html: { class: 'form-horizontal'  } do |f|
+							
+							.input
+								= f.input :user_work_history, label: false, placeholder: 'Должность...', :input_html => { class: 'input-profession' }
+							.input
+								= f.input :job_name, label: false, placeholder: 'Название компании...', :input_html => { class: 'input-profession' }
+
+							= f.button :submit, "Сохранить", class: "btn btn-default", id: "trigger"
+
+
+

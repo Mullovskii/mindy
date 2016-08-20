@@ -2,13 +2,48 @@
 	.col-md-12
 		.user_info_wrap
 			= image_tag(@avatar, class: "big_avatar")
+				
+			- if @user == current_user
+				.profile_edit
+					= link_to(image_tag("edit_white.png", class: "edit_icon"), edit_user_path(@user))
+
 			.user_name_big
 				= @user.name
+			
 			.user_job_big
-				- if @user_work_history == nil
+				- if @user.user_work_history == nil
 					| Эксперт 
 				- else
-					= @user.user_work_history
+					= @user.user_work_history + ""
+					|   из 
+					= @user.job_name
+
+			.rating_wrap
+				ul
+					li
+						.rating_field_name
+							ul
+								li.icon
+									= image_tag("manager.png", class: "rating_icon") 
+								li.percentage
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Менеджмент"}.length
+
+								li.icon
+									= image_tag("startup.png", class: "rating_icon") 
+								li.percentage
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Стартапы"}.length
+
+								li.icon
+									= image_tag("finance.png", class: "rating_icon") 
+								li.percentage
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Финансы"}.length
+									
+								li.icon
+									= image_tag("digital.png", class: "rating_icon") 
+								li.percentage
+									= @user.layouts.map {|l| l.section.name }.select {|s| s == "Маркетинг"}.length
+									= link_to ">>", "#", class: 'more'
+									
 .container
 	- if @user == current_user
 		.row
@@ -23,8 +58,25 @@
 			
 			.small_sections_wrap.main_page
 				= render @articles, partial: "sections/child_section"
-	.row
-		.col-md-12
 
-			.sections_wrap
-				= render @sections
+	- unless @sections.empty?
+		.row
+			.col-md-12
+				.latest_updates.profile.plates
+					| #{@user.name} интересуется сферами:
+					- if @user == current_user
+						= link_to(image_tag("edit.png", class: "edit_icon"), fields_preferences_path)
+				.sections_wrap
+					= render @sections
+
+	- unless @fields.empty? && @user != current_user
+		.row
+			.col-md-12
+				.latest_updates.profile.plates
+					| #{@user.name} интересуется отраслями:
+					- if @user == current_user
+						= link_to(image_tag("edit.png", class: "edit_icon"), industries_preferences_path)
+				.sections_wrap
+					= render @fields, partial: "sections/parent_section"
+
+

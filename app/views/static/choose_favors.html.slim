@@ -3,13 +3,19 @@
 		.text_block.choose_favors
 			.user_info_wrap.choose_favors
 				= image_tag(@avatar, class: "big_avatar")
+			.chosen_favors
+				ul
+					- current_user.favors.where(field_id: nil).each do |f|
+						div id='chosen_#{f.section.id}' 
+							li
+								= f.section.name
 
 
 			
 	.r_main_wrap.choose_favors
 		.layout_body.choose_favors
 			.heading_find_interest
-				| Выберите интересующие вас области и отрасли:
+				| Отметьте интересующие вас сферы:
 
 			.layout_content_holder.choose_favor
 				.row
@@ -39,15 +45,9 @@
 												- else
 													= link_to section.name, favors_path(:user_id => current_user.id, :section_id => section.id, :field_id => nil), :method => :post, :remote => true
 						
-						/ = render @sections, partial: "sections/child_section"
-
-
-			
-
-				/ - if youtube_url?(safe @layout.content)
-    /             	.youtube-container
-    /                 	= embed get_url(safe @layout.content)
-			
-
+				.row 
+					.col-md-12
+						.further_button
+							= link_to "Далее", industries_preferences_path, class: 'btn'
 
 

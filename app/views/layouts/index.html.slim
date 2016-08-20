@@ -1,0 +1,14 @@
+.container
+	- if current_user
+		.row
+			.col-md-12
+				.layouts_group
+						.button_add_layout
+							= link_to "Поделиться знанием", new_layout_path, class: 'btn btn-default'
+	.row
+		.col-md-12
+			.latest_updates.profile
+				| Вся лента:
+			
+			.small_sections_wrap.main_page
+				= render @layouts

@@ -40,9 +40,16 @@
 	.row
 		.col-md-12
 			.latest_updates.fields
-				= link_to "Сферы", sections_path
+				= link_to "Популярные сферы", sections_path
 
 			.sections_wrap
 				= render @sections
+	.row
+		.col-md-12
+			.latest_updates.fields
+				= link_to "Популярные отрасли", fields_path
+
+			.sections_wrap
+				= render @fields
 			
 

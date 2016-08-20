@@ -423,12 +423,16 @@ a.btn{
 	background-color: #eee;
 	text-transform: uppercase;
 	font-weight: 700;
+
 	/*background-image: url('micro');
 	background-repeat: no-repeat;
 	background-position: center;*/
 	border-radius: 10px;
 	a{
 		color: white;
+	}
+	@media (min-width: 768px) {
+	
 	}
 	/*color: #6499F1;*/
 }
@@ -608,6 +612,16 @@ a.btn{
 	color: white;
 	font-weight: 900;
 	font-size: 18px;
+	text-align: center;
+	resize: none;
+}
+
+.input-profession{
+	background-color: white;
+	border: none;
+	color: black;
+	font-weight: 300;
+	font-size: 15px;
 	text-align: center;
 	resize: none;
 }
@@ -960,8 +974,13 @@ margin-right: 10px;
 	padding-bottom: 30px;
 }
 .edit_icon{
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
+	margin-left: 30px;
+	@media(min-width: 768px){
+    	width: 30px;
+		height: 30px;
+  	}
 }
 
 .edit_button{
@@ -1189,6 +1208,12 @@ margin-right: 10px;
 
     .big_avatar{
     	border-radius: 50%;
+		max-width: 37%;
+    	
+    	@media (min-width: 768px) {
+			max-width: 100%;
+			padding: 0 20px;  
+    	}
     }
 
     .user_info_wrap{
@@ -1204,20 +1229,30 @@ margin-right: 10px;
     .user_name_big{
     	font-weight: 700;
     	color: white;
-    	padding: 20px 15px;
-    	font-size: 24px;
+    	padding: 15px 15px;
+    	font-size: 20px;
+    	@media (min-width: 768px) {
+			font-size: 24px;  
+    	}
+    	&.black{
+    		color: black;
+    	}
+
     }
 
     .user_job_big{
     	color: white;
-    	font-size: 15px;
+    	font-size: 13px;
     	margin-top: -15px;
+    	@media (min-width: 768px) {
+			font-size: 15px;
+    	}
     }
 
     .latest_updates{
     	text-transform: uppercase;
     	font-size: 12px;
-    	color: #ddd;
+    	color: #d2cece;
     	font-weight: 100;
     	text-align: center;
     	border-top: 1px solid rgba(221, 221, 221, 0.39);
@@ -1233,7 +1268,11 @@ margin-right: 10px;
 
     	&.profile{
     		margin-top: 30px;
-    }
+    		&.plates{
+    			margin-bottom: -15px;
+    			margin-top: 50px!important;
+    		}
+    	}
 
 		
     	&.fields{
@@ -1304,9 +1343,18 @@ margin-right: 10px;
     }
 
 	.heading_find_interest{
-		font-size: 24px;
+		font-size: 20px;
 		color: #373a3c;
 		font-weight: 100;
+		line-height: 1.1;
+		padding: 0 20px;
+		margin-bottom: -15px;
+		@media (min-width: 768px) {
+			font-size: 24px;
+			padding: 0;
+			margin-bottom: -10px;
+
+		}
 	}
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -1373,3 +1421,108 @@ button.navbar-toggle{
 	width: 20px;
 	height: 20px;
 }
+
+.further_button{
+	text-align: center;
+}
+
+.chosen_favors{
+	font-weight: 100!important;
+	ul {
+		margin-left: 0px;
+		margin-top: 10px;
+		font-weight: 100!important;
+
+		li{
+			color: white;
+			font-size: 12px;
+			display: inline-block;
+			margin-right: 5px;
+			background-color: #6499f1;
+			border-radius: 1.25rem;
+			padding: 8px 10px;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.rating_wrap{
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: -20px;
+
+	ul{
+		margin-left: 0px;
+		li{
+			display: inline-block;
+		}
+	}
+}
+
+.rating_field_name{
+	a{
+		margin-left: 5px;
+		color: white;
+	}
+	ul{
+		margin-left: 0px;
+		margin-bottom: -5px;
+		li{
+			color: #eee;
+			font-size: 12px;
+			display: inline-block;
+			padding-right: 5px;
+			margin-bottom: 5px;
+		}
+		li.percentage{
+			margin-right: 10px;
+			font-weight: 100!important;
+		}
+	}
+}
+
+.rating_icon{
+	width: 20px;
+	@media (min-width: 768px) {
+		width: 35px;
+	}
+}
+
+.edit_profile{
+	text-align: center;
+	max-width: 400px;
+	margin: 0 auto;
+	background-color: #eee;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	padding-right: 60px;
+	padding-left: 60px;
+	
+}
+
+.big_wrap{
+	background-color: aliceblue;
+	height: 100%;
+}
+
+.edit_heading{
+	font-size: 18px;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-weight: 100;
+	@media (min-width: 768px) {
+		font-size: 24px;
+	}
+}
+
+.profile_edit{
+	margin-left: 220px;
+	margin-bottom: -20px;
+}
+
+.edit_form_wrap{
+
+}
+
+
