@@ -9,9 +9,9 @@
 					= f.association :field, as: :select, collection: Field.all, prompt: "Индустрия", label: false
 			
 				.input_layout_name
-					= f.input :name, placeholder: 'Название макета...', label: false, :input_html => { class: 'input-name' }
+					= f.input :name, placeholder: 'Название...', label: false, :input_html => { class: 'input-name' }
 				.input
-					= f.input :description, label: false, placeholder: 'Краткое описание, что макет помогает считать или анализировать...', :input_html => { class: 'input-description' }
+					= f.input :description, label: false, placeholder: 'Кратко о том, что статья помогает считать или анализировать...', :input_html => { class: 'input-description' }
 					
 
 				

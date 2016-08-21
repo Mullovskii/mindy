@@ -59,7 +59,7 @@
 			.small_sections_wrap.main_page
 				= render @articles, partial: "sections/child_section"
 
-	- unless @sections.empty?
+	- unless @sections.empty? && @user != current_user
 		.row
 			.col-md-12
 				.latest_updates.profile.plates

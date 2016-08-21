@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :load_menu, :authenticate_user!
+  before_action :load_menu, :authenticate_user!, :able
   before_action :prepare_meta_tags, if: "request.get?"
 
   def load_menu
@@ -43,5 +43,13 @@ class ApplicationController < ActionController::Base
 
     set_meta_tags options
   end
+
+  private
+
+  def able
+  	@able = proc { current_user.man? }
+  end
+
+  
 
 end

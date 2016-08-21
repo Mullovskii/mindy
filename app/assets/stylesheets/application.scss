@@ -235,7 +235,7 @@ a.btn{
     	}
 
     	li.name{
-    		
+    		a{color: black;}
     		padding-right: 20px;
     		border-right: 1px solid #ddd;
     		display: none;
@@ -255,6 +255,11 @@ a.btn{
     	}
     }
 }
+
+.users_wrap{
+	margin-bottom: 100px;
+}
+
 
 .avatar{
 	border-radius: 50%;
@@ -1300,6 +1305,10 @@ margin-right: 10px;
     	padding: 7px 0px;
     	margin-bottom: 10px;
     	margin-top: 35px;
+    	a{
+    	color: #d2cece;
+    		
+    	}
     	&:hover{
     		color: #f0ad4e;
     		border-top: 1px solid #f0ad4e;

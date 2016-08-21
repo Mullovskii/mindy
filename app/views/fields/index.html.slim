@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-12
+      .latest_updates.fields
+        = link_to "Все индустрии", "#"
+
+      .sections_wrap
+        = render @fields
+      
+      - if @able.call
+        .stripped
+          br
+            = link_to 'Добавить индустрию', new_field_path, class: 'btn'
+

@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
 	def edit
 		@avatar = @user.image+'?type=large'
-
 	end
 
 	def index
@@ -27,8 +26,12 @@ class UsersController < ApplicationController
 
 		respond_to do |format|
 			if @user.save(:validate => false)
-					format.html { redirect_to @user, notice: 'Инфо обновлена.' }
-					format.json { render :show, status: :ok, location: @user }
+					if @user.sign_in_count == 1
+						format.html { redirect_to fields_preferences_path, notice: 'Выберите сферы.' }
+					else
+						format.html { redirect_to @user, notice: 'Инфо обновлена.' }
+						format.json { render :show, status: :ok, location: @user }
+					end
 				else
 					format.html { render :edit }
 					format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :user_work_history, :about, :image, :job_name)
+      params.require(:user).permit(:name, :user_work_history, :about, :image, :job_name, :sign_in_count)
     end
 
 end

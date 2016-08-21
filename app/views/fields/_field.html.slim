@@ -1,10 +1,7 @@
 .col-md-4
 	.section_main_wrap
-		.section_image_wrap
-			- if field.id < 21
-				= link_to (image_tag "#{field.name}.jpeg", class: "section_image"), field
-			- else
-				= link_to (image_tag "0.png", class: "section_image"), field
+		.section_image_wrap			
+			= link_to (image_tag "#{field.name}.jpeg", class: "section_image"), field
 		.section_name
 			= link_to (field.name), field
 	

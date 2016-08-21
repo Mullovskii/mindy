@@ -1,3 +1,29 @@
+<!-- - @disable_footer = true
+.rules-page
+	.background__filter
+	= image_tag('7-bg.jpeg', class: 'background__img')
+
+.sign-up__wrap
+	.form__wrap
+		.registration_title
+			| Профессиональнее каждый день
+		.registration_hello
+			| Лучшие идеи и практики от профессионалов вашей отрасли. 
+			br
+			| Делитесь опытом и знаниями и совершенствуйтесь каждый день с Mindy. 
+
+		.row
+			.col.s12
+					
+		.row.sign-up__social
+			/ = link_to "Войти через Facebook", user_facebook_omniauth_authorize_path
+			= link_to image_tag('fb.png', class: "fb"),user_facebook_omniauth_authorize_path 
+		.rules_accepted
+			| Нажимая «Присоединиться», вы принимаете условия Пользовательского соглашения, Политики конфиденциальности и Политики использования файлов cookie Mindy. -->
+
+
+
+
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

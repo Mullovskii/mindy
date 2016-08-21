@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-12
+      .latest_updates.fields
+        = link_to "Все сферы", "#"
+
+      .sections_wrap
+        = render @sections
+        - if @able.call
+          br
+            = link_to 'Добавить сферу', new_section_path, class: 'btn'
+

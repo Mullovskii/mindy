@@ -3,7 +3,7 @@
 		.row
 			.col-md-12
 				.edit_heading
-					| Ваша деятельность:
+					| #{@user.name.split.first}, чем вы занимаетесь?
 				.edit_profile
 					= image_tag(@avatar, class: "big_avatar")
 
@@ -17,7 +17,7 @@
 								= f.input :user_work_history, label: false, placeholder: 'Должность...', :input_html => { class: 'input-profession' }
 							.input
 								= f.input :job_name, label: false, placeholder: 'Название компании...', :input_html => { class: 'input-profession' }
-
+							
 							= f.button :submit, "Сохранить", class: "btn btn-default", id: "trigger"
 
 
