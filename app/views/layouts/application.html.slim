@@ -18,5 +18,7 @@ html[lang="ru"]
         .alert
             = alert
         = yield
+        = render 'layouts/footer' unless @disable_footer
+
   
 
