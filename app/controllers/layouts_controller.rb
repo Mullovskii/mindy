@@ -10,6 +10,12 @@ class LayoutsController < ApplicationController
   # GET /layouts/1
   # GET /layouts/1.json
   def show
+    @avatar = @layout.user.image+'?type=large'
+    prepare_meta_tags(title: @layout.name,
+                      description: @layout.description,
+                      keywords: @layout.heading,
+                      image: @avatar,
+                      twitter: {card: "summary_large_image"})
   end
 
   # GET /layouts/new

@@ -24,11 +24,14 @@
 
 .sign-up__wrap {
 
-	margin-top: 100px;
+	margin-top: 50px;
 	width: 100%;
 	position: absolute;
 	padding-right: 20px;
 	padding-left: 20px;
+  @media (min-width: 768px) {
+    margin-top: 100px;
+  }
 
  	
   .form__wrap {

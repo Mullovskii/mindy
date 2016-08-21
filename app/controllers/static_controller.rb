@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
 	before_action :authenticate_user!
 	def hello
+		prepare_meta_tags title: "Know more", description: "Все знания в одном месте"
 		@random_article = Layout.order("RANDOM()").first
 	  	@sections = Section.where(parent_section_id: nil).order("RANDOM()").take(9)
 	  	@fields = Field.all.order("RANDOM()").take(9)
