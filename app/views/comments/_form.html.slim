@@ -1,0 +1,10 @@
+= simple_form_for(@comment) do |f| 
+    .input_comment
+        = f.input :content, placeholder: 'Ваш комментарий...', label: false, :input_html => { class: 'input-comment' }
+        = f.input :layout_id, :as => :hidden, :input_html => { :value => @layout.id }
+        .right
+            = f.submit "Добавить", class: "orange_btn"
+
+  
+
+  

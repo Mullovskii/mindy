@@ -27,7 +27,7 @@
 									.section_main_wrap.choose_favor
 										.section_image_wrap.choose_favor
 											- if section.id < 21
-												- if Favor.where(section_id: section, user_id: current_user).first
+												- if Favor.where(field_id: section, user_id: current_user).first
 													= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favor_path(Favor.where(field_id: section, user_id: current_user).first), :method => :delete, :remote => true
 												- else
 													= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :field_id => section.id), :method => :post, :remote => true

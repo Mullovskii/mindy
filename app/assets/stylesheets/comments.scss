@@ -1,0 +1,104 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.add-post {
+  background: #f5f5f5;
+  margin-bottom: 15px;
+  //box-shadow: 0 0 5px 0 rgba(210, 208, 208, 0.35);
+  box-shadow: 0 0 1px -1px rgba(0,0,0,0.9);
+  .post__header {
+    text-align: left;
+    li {
+      display: inline-block;
+    }
+  }
+
+  &__avatar {
+    margin-bottom: 20px;
+    margin-top: 15px;
+    position: relative;
+    @media (min-width: 768px) {
+      margin-top: 0px;
+      float: left;
+      margin-bottom: 0;
+    }
+  }
+
+  &__body {
+    max-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    @media (min-width: 768px) {
+      margin: auto;
+      float: right;
+      width: 91%;
+      text-align: left;
+    }
+  }
+
+
+
+  .post__body {
+    padding-bottom: 10px;
+    @media (min-width: 768px){
+      padding: 20px 35px 18px 35px;
+    }
+  }
+
+  
+ }
+
+ .right{
+ 	float: right;
+ }
+
+.comment_btn{
+	background-color: orange;
+}
+
+.comments_separator{
+	padding-top: 50px;
+	border-top: 1px solid #ddd;
+	width: 100%;
+}
+.comments_wrap{
+	max-width: 500px;
+	margin-left: 10px;
+	margin-right: 10px;
+	@media (min-width: 1050px) {
+		margin-left: 150px;
+	}
+}
+
+input.orange_btn{
+	background-color: transparent;
+	border-radius: 1.25rem;
+	border: 1px solid orange;
+	color: orange;
+	padding: 5px;
+}
+
+.avatar-wrap.comments{
+	text-align: center;
+	@media (min-width: 768px) {
+		text-align: left;
+	}
+}
+
+.comments_made{
+	margin-top: 60px;
+	margin-left: 30px;
+	padding-bottom: 60px;
+	@media (min-width: 768px) {
+		margin-top: 30px;
+	}
+
+}
+
+.post__time_s{
+	color: grey;
+	font-weight: 100;
+	font-size: 12px;
+}

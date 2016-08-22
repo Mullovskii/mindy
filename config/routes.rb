@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   resources :favors do
     collection do 
     end

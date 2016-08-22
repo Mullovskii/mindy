@@ -10,6 +10,7 @@ class LayoutsController < ApplicationController
   # GET /layouts/1
   # GET /layouts/1.json
   def show
+    @comment = Comment.new
     @avatar = @layout.user.image+'?type=large'
     prepare_meta_tags(title: @layout.name,
                       description: @layout.description,

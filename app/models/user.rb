@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :favors
   has_many :sections, through: :favors
   has_many :fields, through: :favors
+  has_many :comments
   
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,

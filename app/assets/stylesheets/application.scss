@@ -556,6 +556,7 @@ a.btn{
 	@media (min-width: 768px) {
       width: 25%;
       height: 100vh;
+      position: fixed;
     }
     &.choose_favors{
     	background-color: #f0ad4e;
@@ -673,6 +674,17 @@ a.btn{
 	@media(min-width: 768px){
     	min-height: 300px;
   	}
+}
+
+.input-comment{
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	color: grey;
+	font-weight: 500;
+	font-size: 14px;
+	resize: none;
+	
 }
 
 .input-name::-webkit-input-placeholder { color: white;}
@@ -1112,8 +1124,12 @@ margin-right: 10px;
   	padding: 10px;
 }
 
+
 .layout_card_description{
 	color: grey;
+	&.comment{
+		color: #373a3c;
+	}
 }
 
 .layouts_grid{
@@ -1190,6 +1206,13 @@ margin-right: 10px;
       margin-right: 12px;
       @media(min-width: 768px){
         margin-right: 18px;
+      }
+      &.comments{
+      	margin: 0 auto;
+      	width: 100%;
+      	@media(min-width: 768px){
+        	margin-right: 5px;
+      	}
       }
     }
 
@@ -1587,6 +1610,10 @@ textarea[id=layout_content]{
 .big_wrap{
 	background-color: aliceblue;
 	height: 100%;
+	&.white{
+		background-color: white;
+		height: 80%;
+	}
 }
 
 .edit_heading{
@@ -1643,6 +1670,7 @@ table.ratings{
 	min-height: 200px;
 	padding: 20px;
 	background-color: #f7f4f4;
+	position: inherit;
 }
 .motto{
 	color: #373a3c;
@@ -1673,5 +1701,13 @@ table.ratings{
     	padding-bottom: 6px;
     	max-width: 85px;
   	}
+}
+
+.comments_wrap{
+	ul{
+		li{
+			display: inline-block;
+		}
+	}
 }
 

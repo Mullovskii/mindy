@@ -1,3 +1,4 @@
+- @disable_footer = true
 .main_body
 	.l_sidebar
 		.text_block
@@ -26,13 +27,40 @@
 
 			.layout_content_holder
 				= raw safe @layout.content
-
 			
+		.comments_separator
+			.comments_wrap
+				.post__body
+					.add-post__avatar
+						.avatar-wrap.comments
+							= link_to(image_tag(current_user.image, class: "avatar"), current_user)
 
-				/ - if youtube_url?(safe @layout.content)
-    /             	.youtube-container
-    /                 	= embed get_url(safe @layout.content)
+					.add-post__body#first-tab-group.tabgroup
+						.add-post__tab#news
+							= simple_form_for(@comment) do |f| 
+							    .input_comment
+							        = f.input :content, placeholder: 'Ваш комментарий...', label: false, :input_html => { class: 'input-comment' }
+							        = f.input :layout_id, :as => :hidden, :input_html => { :value => @layout.id }
+							        .right
+							            = f.submit "Добавить", class: "orange_btn"
+							
 			
+				.comments_made
+					- @layout.comments.reverse.each do |comment|
+						.layout_card_wrap
+							.avatar-wrap
+								= link_to (image_tag comment.user.image, class: 'avatar'), comment.user
+							.author__description
+								.author__name
+									= link_to comment.user.name, comment.user
+									
+								.post__time_s
+									= time_ago_in_words(comment.user.created_at) + ' назад'
+									
+							.layout_card_description.comment
+								= comment.content
+				
+							
 
 
 
