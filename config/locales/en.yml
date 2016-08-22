@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+
+  errors:
+      models:
+        layout:
+          attributes:
+            field_id:
+              blank: "is required"
+            section_id:
+              blank: "is required"

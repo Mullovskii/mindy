@@ -1,35 +1,36 @@
-.row
-	.col-md-12
-		.header_wrap_small
-			.text_wrap
-				.back_wrap
-					- if @section.parent_section.nil?
-						= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем сферам", root_path
-					- else
-						= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
-
-				.section_header_title
-					= @section.name
-			
-
-.container
+.big_wrap.white
 	.row
 		.col-md-12
-			- if @section.child_sections.empty?
-				.layouts_group
-					.button_add_layout
-						= link_to "Поделиться знанием", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
+			.header_wrap_small
+				.text_wrap
+					.back_wrap
+						- if @section.parent_section.nil?
+							= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем сферам", root_path
+						- else
+							= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
 
-				.layouts_grid
-					= render @layouts
+					.section_header_title
+						= @section.name
+				
+
+	.container
+		.row
+			.col-md-12
+				- if @section.child_sections.empty?
+					.layouts_group
+						.button_add_layout
+							= link_to "Поделиться знанием", new_layout_path({:section_id => @section.id}), class: 'btn btn-default', method: :get
+
+					.layouts_grid
+						= render @layouts
 
 
-			-else
-				.small_sections_wrap
-					= render @section.child_sections, partial: "sections/child_section"
+				-else
+					.small_sections_wrap
+						= render @section.child_sections, partial: "sections/child_section"
 
-				.row
-					.col-md-12
+					.row
+						.col-md-12
 
-						.layouts_grid
-							= render @layouts
+							.layouts_grid
+								= render @layouts

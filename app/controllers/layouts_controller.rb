@@ -39,7 +39,7 @@ class LayoutsController < ApplicationController
         format.html { redirect_to @layout, notice: 'Шаблон создан.' }
         format.json { render :show, status: :created, location: @layout }
       else
-        format.html { render :new }
+        format.html { render :new, :flash => { :error => "Oh no!" } }
         format.json { render json: @layout.errors, status: :unprocessable_entity }
       end
     end

@@ -1,66 +1,71 @@
 - @disable_footer = true
 .main_body
-	.l_sidebar
-		.text_block
-
-			.back_wrap_layout
-				= link_to image_tag('back_icon.png', class: "back_icon") + @layout.section.name, @layout.section
+	div id="main"
+		.l_sidebar
 		
-			.layout_name_holder
-				= @layout.name
-			.layout_description_holder
-				= @layout.description
+			.text_block
 
+				.back_wrap_layout
+					= link_to image_tag('back_icon.png', class: "back_icon") + @layout.section.name, @layout.section
 			
-	.r_main_wrap
-		.layout_body
-			- if current_user == @layout.user
-				.edit_button
-					= link_to(image_tag("edit.png", class: "edit_icon"), edit_layout_path(@layout))
-					= link_to(image_tag("delete_article.png", class: "edit_icon"), layout_path(@layout), method: :delete)
+				.layout_name_holder
+					= @layout.name
+				.layout_description_holder
+					= @layout.description
 
-					
-			.layout_heading_holder
-				= @layout.heading
+	div id="right"		
+		.r_main_wrap
+			.layout_body
+				- if current_user == @layout.user
+					.edit_button
+						= link_to(image_tag("edit.png", class: "edit_icon"), edit_layout_path(@layout))
+						= link_to(image_tag("delete_article.png", class: "edit_icon"), layout_path(@layout), method: :delete)
+
+						
+				.layout_heading_holder
+					= @layout.heading
 
 
 
-			.layout_content_holder
-				= raw safe @layout.content
-			
-		.comments_separator
-			.comments_wrap
-				.post__body
-					.add-post__avatar
-						.avatar-wrap.comments
-							= link_to(image_tag(current_user.image, class: "avatar"), current_user)
+				.layout_content_holder
+					= raw safe @layout.content
 
-					.add-post__body#first-tab-group.tabgroup
-						.add-post__tab#news
-							= simple_form_for(@comment) do |f| 
-							    .input_comment
-							        = f.input :content, placeholder: 'Ваш комментарий...', label: false, :input_html => { class: 'input-comment' }
-							        = f.input :layout_id, :as => :hidden, :input_html => { :value => @layout.id }
-							        .right
-							            = f.submit "Добавить", class: "orange_btn"
-							
-			
-				.comments_made
-					- @layout.comments.reverse.each do |comment|
-						.layout_card_wrap
-							.avatar-wrap
-								= link_to (image_tag comment.user.image, class: 'avatar'), comment.user
-							.author__description
-								.author__name
-									= link_to comment.user.name, comment.user
-									
-								.post__time_s
-									= time_ago_in_words(comment.user.created_at) + ' назад'
-									
-							.layout_card_description.comment
-								= comment.content
+			.social_share_wrap
+				.ya-share2 data-services="vkontakte,facebook,linkedin" data-description='#{@layout.description}' data-image='#{@layout.user.image}' data-title='#{@layout.name}'
 				
-							
+			.comments_separator
+				.comments_wrap
+					.post__body
+						.add-post__avatar
+							.avatar-wrap.comments
+								= link_to(image_tag(current_user.image, class: "avatar"), current_user)
+
+						.add-post__body#first-tab-group.tabgroup
+							.add-post__tab#news
+								= simple_form_for(@comment) do |f| 
+								    .input_comment
+								        = f.input :content, placeholder: 'Ваш комментарий...', label: false, :input_html => { class: 'input-comment' }
+								        = f.input :layout_id, :as => :hidden, :input_html => { :value => @layout.id }
+								        .right
+								            = f.submit "Добавить", class: "orange_btn"
+								
+				
+					.comments_made
+						- @layout.comments.reverse.each do |comment|
+							.layout_card_wrap
+								.avatar-wrap
+									= link_to (image_tag comment.user.image, class: 'avatar'), comment.user
+								.author__description
+									.author__name
+										= link_to comment.user.name, comment.user
+										
+									.post__time_s
+										= time_ago_in_words(comment.user.created_at) + ' назад'
+										
+								.layout_card_description.comment
+									= comment.content
+					
+								
 
 
 

@@ -1,30 +1,35 @@
+- @disable_footer = true
 .main_body
 	= simple_form_for @layout, html: { class: 'form-horizontal'  } do |f|
-		.l_sidebar
-			.text_block
+		div id="main"
+			.l_sidebar
+				.text_block
+					
+					.input.dropdown_bold
+						= f.association :section, as: :select, collection: Section.all, prompt: "Выберите сферу", label: false
+					.input.dropdown_bold
+						= f.association :field, as: :select, collection: Field.all, prompt: "Выберите индустрию", label: false
+					br
+					
 				
-				.input.dropdown_bold
-					= f.association :section, as: :select, collection: Section.all, prompt: "Сфера", label: false
-				.input.dropdown_bold
-					= f.association :field, as: :select, collection: Field.all, prompt: "Индустрия", label: false
-			
-				.input_layout_name
-					= f.input :name, placeholder: 'Название...', label: false, :input_html => { class: 'input-name' }
-				.input
-					= f.input :description, label: false, placeholder: 'Кратко о том, что статья помогает считать или анализировать...', :input_html => { class: 'input-description' }
+					.input_layout_name
+						= f.input :name, placeholder: 'Название...', label: false, :input_html => { class: 'input-name' }
+					.input
+						= f.input :description, label: false, placeholder: 'Кратко о том, что статья помогает считать или анализировать...', :input_html => { class: 'input-description' }
 					
 
+		div id="right"		
 				
-		.r_main_wrap
-			.layout_body
-				.input_layout_content
-					= f.input :heading, label: false, placeholder: 'Заголовок...', :input_html => { class: 'input-heading'} 
+			.r_main_wrap
+				.layout_body
+					.input_layout_content
+						= f.input :heading, label: false, placeholder: 'Заголовок...', :input_html => { class: 'input-heading'} 
 
-				.input_layout_content
-					= f.input :content, label: false, placeholder: 'Раскройте суть методологии...', :input_html => { class: 'input-content' }, as: :wysihtml5
+					.input_layout_content
+						= f.input :content, label: false, placeholder: 'Раскройте суть методологии...', :input_html => { class: 'input-content' }, as: :wysihtml5
 
-					= f.button :submit, "Сохранить", class: "btn btn-default", id: "trigger"
-				
+						= f.button :submit, "Сохранить", class: "btn btn-default", id: "trigger"
+					
 
 
 

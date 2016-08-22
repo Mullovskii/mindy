@@ -15,6 +15,7 @@
 //= require bootstrap.js
 //= require jquery
 //= require jquery_ujs
+//= require sticky-kit.js
 
 
 //= require turbolinks
@@ -23,8 +24,18 @@
 //= require bootstrap-wysihtml5
 
 
+
 $(document).ready(function () {
 			  // $(".navbar-toggle").on("click", function () {
 				 //    $(this).toggleClass("active");
 			  // });
+
+			  	$("#main").stick_in_parent({
+					offset_top: 0
+				});
+
+				if (screen.width<=768) {
+					$("#main").trigger("sticky_kit:detach");
+				};
+			  	
 });
