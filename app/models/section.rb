@@ -3,5 +3,7 @@ class Section < ApplicationRecord
   	has_many :child_sections, :class_name => "Section", :foreign_key => "parent_section_id"
   	has_many :layouts
   	has_many :favors
+	has_many :users
+  	
   	
 end

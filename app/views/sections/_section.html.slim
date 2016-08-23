@@ -1,7 +1,7 @@
 .col-md-4
 	.section_main_wrap
 		.section_image_wrap
-			- if section.id < 21
+			- if section.id < 50
 				= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), section
 			- else
 				= link_to (image_tag "0.png", class: "section_image"), section

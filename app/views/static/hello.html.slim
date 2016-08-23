@@ -25,7 +25,7 @@
 						= link_to "Поделиться знанием", new_layout_path, class: 'btn btn-default'
 
 			.latest_updates
-				= link_to "Свежие знания", layouts_path
+				= link_to "Все свежие знания >", layouts_path
 	.row
 		.col-md-12
 			.small_sections_wrap.main_page
@@ -40,14 +40,14 @@
 	.row
 		.col-md-12
 			.latest_updates.fields
-				= link_to "Популярные сферы", sections_path
+				= link_to "Все сферы >", sections_path
 
 			.sections_wrap
 				= render @sections
 	.row
 		.col-md-12
 			.latest_updates.fields
-				= link_to "Популярные отрасли", fields_path
+				= link_to "Все отрасли >", fields_path
 
 			.sections_wrap
 				= render @fields

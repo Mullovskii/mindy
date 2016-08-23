@@ -18,18 +18,18 @@ nav.navbar.navbar-default
 						- @main_sections.each do |s|
 							li.main_field_link
 								= link_to s.name, s
-								- unless Section.where(parent_section_id: s.id).empty?
-									ul.sub_link
-										- Section.where(parent_section_id: s.id).each do |m|
-											li.sub 
-												= link_to m.name, m
+								/ - unless Section.where(parent_section_id: s.id).empty?
+								/ 	ul.sub_link
+								/ 		- Section.where(parent_section_id: s.id).each do |m|
+								/ 			li.sub 
+								/ 				= link_to m.name, m
 				li.dropdown
 				    a.dropdown-toggle data-toggle="dropdown" href="#" 
 				    	| Индустрии
 				    	span.caret
 				    ul.dropdown-menu role="menu" 
 
-						- @fields.each do |f|
+						- Field.all.each do |f|
 							li.main_field_link
 								= link_to f.name, f
 								/ - unless Section.where(parent_section_id: s.id).empty?
@@ -76,18 +76,18 @@ nav.navbar.navbar-default
           	- @main_sections.each do |s|
 				li.main_field_link
 					= link_to s.name, s
-					- unless Section.where(parent_section_id: s.id).empty?
-						ul.sub_link
-							- Section.where(parent_section_id: s.id).each do |m|
-								li.sub 
-									= link_to m.name, m
+					/ - unless Section.where(parent_section_id: s.id).empty?
+					/ 	ul.sub_link
+					/ 		- Section.where(parent_section_id: s.id).each do |m|
+					/ 			li.sub 
+					/ 				= link_to m.name, m
 		li.dropdown
           	a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
             	| Индустрии
 				span.caret
 		    ul.dropdown-menu role="menu" 
 
-				- @fields.each do |f|
+				- Field.all.each do |f|
 					li.main_field_link
 						= link_to f.name, f
 		li
