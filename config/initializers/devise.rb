@@ -21,6 +21,7 @@ Devise.setup do |config|
   # config.parent_mailer = 'ActionMailer::Base'
 
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
+  config.secret_key = '75c6fbe295ed53f66a2a0120f03e9ab3f865167d1b1366fe5578d70e415d922f320714838b8f7f0d34f1056f167c6b47b7f0938e360dcebfa4f757586dede882'
 
   # config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_KEY'],
   #                 { display: 'popup',secure_image_url: true, image_size: 'large', scope: 'email, public_profile, user_birthday', info_fields: 'email, birthday, first_name, gender, last_name',

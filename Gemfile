@@ -32,6 +32,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'meta-tags'
+gem 'execjs'
+gem 'therubyracer'
 
 
 # Use Redis adapter to run Action Cable in production
