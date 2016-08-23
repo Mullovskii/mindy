@@ -16,19 +16,13 @@
 			.col.s12
 					
 		.row.sign-up__social
-			/ = link_to "Войти через Facebook", user_facebook_omniauth_authorize_path
+		
 			= link_to image_tag('fb.png', class: "fb"),user_facebook_omniauth_authorize_path 
 		.rules_accepted
 			| Нажимая «Присоединиться», вы принимаете условия Пользовательского соглашения, Политики конфиденциальности и Политики использования файлов cookie Mindy.
 
 
-/ = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
-	
-/ 	= f.input :email, required: false, autofocus: true 
-/ 	= f.input :password, required: false 
-/ 	= f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
-/ 	.form-actions
-/ 		= f.button :submit, "Log in" 
+			 
 
 
-/ <!-- = render "devise/shared/links" -->
+			

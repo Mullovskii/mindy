@@ -26,9 +26,10 @@
 						= f.input :heading, label: false, placeholder: 'Заголовок...', :input_html => { class: 'input-heading'} 
 
 					.input_layout_content
-						= f.input :content, label: false, placeholder: 'Раскройте суть методологии...', :input_html => { class: 'input-content' }, as: :wysihtml5
+						= f.input :content, label: false, placeholder: 'Раскройте суть...', :input_html => { class: 'input-content' }, as: :wysihtml5
+					.publish
 
-						= f.button :submit, "Сохранить", class: "btn btn-default", id: "trigger"
+						= f.button :submit, "Опубликовать", class: "btn btn-default", id: "trigger"
 					
 
 

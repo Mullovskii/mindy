@@ -1,3 +1,4 @@
+- @disable_footer = true
 .main_body
 	.l_sidebar.choose_favors
 		.text_block.choose_favors
@@ -9,6 +10,8 @@
 						div id='chosen_#{f.section.id}' 
 							li
 								= f.section.name
+			.further_button
+				= link_to "Далее", industries_preferences_path, class: 'btn'
 
 
 			
