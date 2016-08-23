@@ -33,7 +33,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'meta-tags'
 gem 'execjs'
-gem 'therubyracer'
+# gem 'therubyracer'
 
 
 # Use Redis adapter to run Action Cable in production
