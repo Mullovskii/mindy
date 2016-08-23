@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+gem 'rails_12factor'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -24,7 +25,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'slim'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap'
 gem 'rails_real_favicon'
 gem 'bootstrap-wysihtml5-rails'
 
@@ -32,9 +33,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'meta-tags'
-gem 'execjs'
-gem 'rails_12factor'
-gem 'therubyracer'
+# gem 'execjs'
+
+# gem 'therubyracer'
 
 
 # Use Redis adapter to run Action Cable in production
