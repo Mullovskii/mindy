@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 	def show
 		@avatar = @user.image+'?type=large'
 		@articles = @user.layouts.reverse
-		@sections = @user.sections
-		@fields = @user.fields
+		@sections = @user.sections.uniq
+		@fields = @user.fields.uniq
 	end
 
 	def edit

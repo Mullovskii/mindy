@@ -5,7 +5,7 @@
 				.text_wrap
 					.back_wrap
 						- if @section.parent_section.nil?
-							= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем сферам", root_path
+							= link_to image_tag('back_icon.png', class: "back_icon") + "Ко всем сферам", sections_path
 						- else
 							= link_to image_tag('back_icon.png', class: "back_icon") + @section.parent_section.name, section_path(@section.parent_section)
 

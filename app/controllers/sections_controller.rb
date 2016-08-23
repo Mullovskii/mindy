@@ -4,7 +4,7 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.where(parent_section_id: nil)
+    @sections = Section.all
   end
 
   # GET /sections/1
