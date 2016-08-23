@@ -8,6 +8,7 @@ class CreateLayouts < ActiveRecord::Migration[5.0]
       t.text :content
       t.text :heading
       t.string :image_url
+      t.integer :field_id
 
       t.timestamps
     end

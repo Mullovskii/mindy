@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 20160821140908) do
     t.text     "content"
     t.text     "heading"
     t.string   "image_url"
+    t.integer  "field_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "field_id"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -72,8 +72,6 @@ ActiveRecord::Schema.define(version: 20160821140908) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
@@ -83,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160821140908) do
     t.string   "user_work_history"
     t.string   "job_name"
     t.integer  "field_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
