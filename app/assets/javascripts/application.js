@@ -12,16 +12,16 @@
 //
 
 
-
+//= require bootstrap.js
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.js
-//= require bootstrap-sprockets
-//= require bootstrap-wysihtml5
 //= require sticky-kit.js
+
+
 //= require turbolinks
 //= require_tree .
-
+//= require bootstrap-sprockets
+//= require bootstrap-wysihtml5
 
 
 
