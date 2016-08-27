@@ -25,8 +25,14 @@ document.addEventListener("turbolinks:load", function() {
 		$("#main").stick_in_parent({
 		offset_top: 0
 		});
-
 		window['rangy'].initialized = false
+
+		$('.wysihtml5').each(function(i, elem) {
+      		$(elem).wysihtml5();
+    	});
+
+		
+		$('.wysihtml5').wysihtml5({data-turbolinks-eval="false"})
 
   // ...
 });
