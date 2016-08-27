@@ -43,9 +43,7 @@ $(document).ready(function(){
 		offset_top: 0
 		});
 
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
-    });
+    
 
  })
 
