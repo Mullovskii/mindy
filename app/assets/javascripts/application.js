@@ -13,7 +13,7 @@
 
 
 //= require jquery
-
+//= require jquery_ujs
 //= require bootstrap.js
 
 //= require bootstrap-wysihtml5
@@ -37,10 +37,6 @@ $(document).ready(function () {
 					$("#main").trigger("sticky_kit:detach");
 				};
 
-				$(document).on('page:load', function(){
-  window['rangy'].initialized = false
-});
-
-
+				
 			  	
 });
