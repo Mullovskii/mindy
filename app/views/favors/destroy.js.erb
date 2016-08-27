@@ -1,2 +1,2 @@
-$("#name_<%= @section.id %>").replaceWith('<%= j render partial: 'favors/favor_delete', object: @favor, as: 'favor'  %>');
+$("#name_<%= @section.id %>").replaceWith('<%= j render partial: 'favors/favor_delete', object: @section, as: 'favor'  %>');
 $("#chosen_<%= @section.id %>").remove().fadeIn(1000);

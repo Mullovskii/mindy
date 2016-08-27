@@ -1,4 +1,4 @@
-$("#name_<%= @section.id %>").replaceWith('<%= j render partial: 'favors/favor_create', object: @favor, as: 'favor'  %>');
+$("#name_<%= @section.id %>").replaceWith('<%= j render partial: 'favors/favor_create', object: @section, as: 'favor'  %>');
 
 // $("#name_<%= @section.id %>").prepend('<%= j image_tag 'ok.png', class: "ok" %>');
 $("<div id='chosen_<%= @section.id%>'> <li> <%= @section.name %> </li> </div> ").prependTo(".chosen_favors ul");

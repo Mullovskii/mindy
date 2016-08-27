@@ -1,3 +1,7 @@
-div id='name_#{favor.section.id}'
-	= link_to favor.section.name, favors_path(:user_id => @current_user.id, :section_id => favor.section.id, :field_id => nil), :method => :post, :remote => true
+div id='name_#{@section.id}'
+	- if @section.class == Section
+		= link_to @section.name, favors_path(:user_id => @current_user.id, :section_id => @section.id, :field_id => nil), :method => :post, :remote => true
+	-else
+		= link_to @section.name, favors_path(:user_id => @current_user.id, :field_id => @section.id, :field_id => nil), :method => :post, :remote => true
+
 	
