@@ -580,6 +580,7 @@ a.btn{
 	display: inline-block;
 	position: inherit;
 	overflow: hidden;
+	float: left;
 	
 	@media (min-width: 768px) {
       width: 25%;

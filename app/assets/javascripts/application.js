@@ -20,24 +20,16 @@
 //= require sticky-kit.js
 //= require turbolinks
 //= require_tree .
-
-
-
-
-$(document).ready(function () {
-			  // $(".navbar-toggle").on("click", function () {
-				 //    $(this).toggleClass("active");
-			  // });
-
-
-			  	$("#main").stick_in_parent({
-					offset_top: 0
-				});
-
-				// if (screen.width<=768) {
-				// 	$("#main").trigger("sticky_kit:detach");
-				// };
-
-
-			  	
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
 });
+document.addEventListener("turbolinks:load", function() {
+		$("#main").stick_in_parent({
+		offset_top: 0
+		});
+		
+	
+
+  // ...
+});
+
