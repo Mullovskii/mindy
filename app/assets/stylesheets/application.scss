@@ -15,7 +15,8 @@
  */
 
 @import "bootstrap";
-@import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+//= require bootstrap-wysihtml5
+/*@import "bootstrap-wysihtml5/bootstrap3-wysihtml5";*/
 
 /*@import "variables";*/
 
@@ -354,7 +355,7 @@ a.btn{
     z-index: 2;
 	min-height: 200px;
     @media(min-width: 768px){
-    	height: 200px;
+    	min-height: 200px;
 		width: 100%;
   	}
   	&.blue{
@@ -390,6 +391,12 @@ a.btn{
   	}
   	&.article{
   		font-size: 22px;
+  		a:visited{
+		color: white;
+		}
+  		a:visited{
+		color: inherit;
+		}
   	}
 }
 
