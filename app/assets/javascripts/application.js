@@ -29,14 +29,15 @@ $(document).ready(function () {
 				 //    $(this).toggleClass("active");
 			  // });
 
+
 			  	$("#main").stick_in_parent({
 					offset_top: 0
 				});
 
-				if (screen.width<=768) {
-					$("#main").trigger("sticky_kit:detach");
-				};
+				// if (screen.width<=768) {
+				// 	$("#main").trigger("sticky_kit:detach");
+				// };
 
-				
+
 			  	
 });

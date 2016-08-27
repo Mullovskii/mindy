@@ -30,14 +30,25 @@
 										.section_image_wrap.choose_favor
 											- if section.id < 50
 												- if Favor.where(section_id: section, user_id: current_user).first
-													= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favor_path(Favor.where(section_id: section, user_id: current_user).first), :method => :delete, :remote => true
+													/ = link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favor_path(Favor.where(section_id: section, user_id: current_user).first), :method => :delete, :remote => true
+													= image_tag "#{section.id}.jpeg", class: "section_image"
+													
+
 												- else
-													= link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :section_id => section.id, :field_id => nil), :method => :post, :remote => true
+													/ = link_to (image_tag "#{section.id}.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :section_id => section.id, :field_id => nil), :method => :post, :remote => true
+													= image_tag "#{section.id}.jpeg", class: "section_image"
+
 											- else
 												- if Favor.where(section_id: section, user_id: current_user).first
-													= link_to (image_tag "0.jpeg", class: "section_image"), favor_path(Favor.where(section_id: section, user_id: current_user).first), :method => :delete, :remote => true
+													/ = link_to (image_tag "0.jpeg", class: "section_image"), favor_path(Favor.where(section_id: section, user_id: current_user).first), :method => :delete, :remote => true
+													= image_tag "#{section.id}.jpeg", class: "section_image"
+													
+
 												- else
-													= link_to (image_tag "0.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :section_id => section.id, :field_id => nil), :method => :post, :remote => true
+													/ = link_to (image_tag "0.jpeg", class: "section_image"), favors_path(:user_id => current_user.id, :section_id => section.id, :field_id => nil), :method => :post, :remote => true
+													= image_tag "#{section.id}.jpeg", class: "section_image"
+													
+
 
 										
 										.section_name

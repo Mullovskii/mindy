@@ -1,2 +1,2 @@
-$("#name_<%= @section.id %>").replaceWith('<%= j link_to @section.name, favors_path(:user_id => current_user.id, :section_id => @section.id, :field_id => nil), :method => :post, :remote => true %>').fadeIn(1000);
+$("#name_<%= @section.id %>").replaceWith('<%= j render partial: 'favors/favor_delete', object: @favor, as: 'favor'  %>');
 $("#chosen_<%= @section.id %>").remove().fadeIn(1000);

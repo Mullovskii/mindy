@@ -25,6 +25,7 @@ class FavorsController < ApplicationController
   # POST /favors.json
   def create
     # @favor = Favor.new(favor_params)
+    @current_user = current_user
     @favor = current_user.favors.create(user_id: params[:user_id], section_id: params[:section_id], field_id: params[:field_id])
     if @favor.field.nil?
       @section = @favor.section
@@ -63,6 +64,7 @@ class FavorsController < ApplicationController
   # DELETE /favors/1
   # DELETE /favors/1.json
   def destroy
+    @current_user = current_user
     @favor.destroy
     if @favor.field.nil?
       @section = @favor.section

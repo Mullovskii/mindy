@@ -1,0 +1,4 @@
+div id='name_#{favor.section.id}'
+	= image_tag "delete.png", class: "delete_img"
+	= link_to favor.section.name, favor_path(Favor.where(section_id: favor.section, user_id: favor.user).first), :method => :delete, :remote => true
+	
