@@ -20,15 +20,13 @@
 //= require sticky-kit.js
 //= require turbolinks
 //= require_tree .
-$(document).on('page:load', function(){
-  window['rangy'].initialized = false
-});
+
 document.addEventListener("turbolinks:load", function() {
 		$("#main").stick_in_parent({
 		offset_top: 0
 		});
-		
-	
+
+		window['rangy'].initialized = false
 
   // ...
 });
