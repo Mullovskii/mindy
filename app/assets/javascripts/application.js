@@ -17,17 +17,39 @@
 //= require bootstrap.js
 
 //= require sticky-kit.js
-//= require turbolinks
+
 //= require_tree .
 //= require medium-editor
 
-document.addEventListener("turbolinks:load", function() {
+// document.addEventListener("turbolinks:load", function() {
 		
-		$("#main").stick_in_parent({
-			offset_top: 0
-		});	
+// 		$("#main").stick_in_parent({
+// 			offset_top: 0
+// 		});	
 
-		var editor = new MediumEditor('.editable', {
+// 		var editor = new MediumEditor('.editable', {
+// 			toolbar: {
+//         		buttons: ['bold', 'italic', 'underline', 'orderedlist', 'anchor', 'quote', 'image' ]
+//     		},
+// 			placeholder: {
+// 	        	/* This example includes the default options for placeholder,
+// 	           if nothing is passed this is what it used */
+// 	        	text: 'Начните писать',
+// 	        	hideOnClick: true
+//     		}
+//     		// options go here
+//   		});
+
+  
+// });
+
+$(document).ready(function(){
+
+	$("#main").stick_in_parent({
+		offset_top: 0
+		});
+
+    var editor = new MediumEditor('.editable', {
 			toolbar: {
         		buttons: ['bold', 'italic', 'underline', 'orderedlist', 'anchor', 'quote', 'image' ]
     		},
@@ -40,18 +62,5 @@ document.addEventListener("turbolinks:load", function() {
     		// options go here
   		});
 
-  
-});
-
-// $(document).ready(function(){
-
-// 	$("#main").stick_in_parent({
-// 		offset_top: 0
-// 		});
-
-//     $('.wysihtml5').each(function(i, elem) {
-//       $(elem).wysihtml5();
-//     });
-
-//  })
+ })
 
