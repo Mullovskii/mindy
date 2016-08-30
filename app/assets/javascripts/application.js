@@ -15,11 +15,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.js
-
-//= require sticky-kit.js
-
-//= require_tree .
 //= require medium-editor
+//= require sticky-kit.js
+//= require_tree .
+
 
 // document.addEventListener("turbolinks:load", function() {
 		
