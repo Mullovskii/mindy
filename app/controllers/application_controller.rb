@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_menu,  :able
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :prepare_meta_tags, if: "request.get?"
 
   def load_menu

@@ -601,7 +601,7 @@ a.btn{
 	    }
     }
     &.edit{
-    	background-color: #f0ad4e;
+    	background-color: #00bcd4;
     }
 }
 
@@ -1794,4 +1794,13 @@ display: none;
 blockquote{
 	border-left: 2px solid orange;
 	padding-left: 10px;
+}
+
+.hint{
+	border-left: 1px solid orange;
+	padding-left: 10px;
+	font-weight: 300;
+	margin-bottom: 30px;
+	color: grey;
+	margin-left: 13px;
 }

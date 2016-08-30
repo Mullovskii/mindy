@@ -55,13 +55,11 @@ $(document).ready(function(){
 			placeholder: {
 	        	/* This example includes the default options for placeholder,
 	           if nothing is passed this is what it used */
-	        	text: 'Начните писать',
+	        	text: 'Начните писать...',
 	        	hideOnClick: true
     		}
     		// options go here
   		});
-
-    alert("test");
 
  })
 
