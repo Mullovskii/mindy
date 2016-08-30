@@ -16,16 +16,29 @@
 //= require jquery_ujs
 //= require bootstrap.js
 
-//= require bootstrap-wysihtml5
 //= require sticky-kit.js
 //= require turbolinks
 //= require_tree .
+//= require medium-editor
 
 document.addEventListener("turbolinks:load", function() {
 		
 		$("#main").stick_in_parent({
 			offset_top: 0
 		});	
+
+		var editor = new MediumEditor('.editable', {
+			toolbar: {
+        		buttons: ['bold', 'italic', 'underline', 'orderedlist', 'anchor', 'quote', 'image' ]
+    		},
+			placeholder: {
+	        	/* This example includes the default options for placeholder,
+	           if nothing is passed this is what it used */
+	        	text: 'Начните писать',
+	        	hideOnClick: true
+    		}
+    		// options go here
+  		});
 
   
 });

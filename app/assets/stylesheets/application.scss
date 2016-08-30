@@ -10,12 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require medium-editor/medium-editor
+ *= require medium-editor/themes/beagle
  *= require_tree .
  *= require_self
  */
 
+
 @import "bootstrap";
-/*//= require bootstrap-wysihtml5*/
 @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
 
 /*@import "variables";*/
@@ -598,6 +600,9 @@ a.btn{
 	      height: 100vh;
 	    }
     }
+    &.edit{
+    	background-color: #f0ad4e;
+    }
 }
 
 .r_main_wrap{
@@ -740,7 +745,7 @@ a.btn{
 	color: white;
 }
 
-.wysihtml5-toolbar{
+/*.wysihtml5-toolbar{
 	max-width: 700px;
 	.btn{
 		border-radius: 1.25rem;
@@ -753,10 +758,10 @@ a.btn{
 	.current-font{
 		color: white;
 		font-size: 12px;
-	}
-}
+	}*/
+/*}*/
 
-ul.wysihtml5-toolbar li a[title="Insert image"] { 
+/*ul.wysihtml5-toolbar li a[title="Insert image"] { 
 	background-image: image-url("camera.png");
 	background-size: 50%;
 	height: 34px;
@@ -886,13 +891,13 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command-value="blockquote"].btn.wysihtml5-
 	background-repeat: no-repeat;
 	background-position:center;
 	
-}
+}*/
 
-ul.dropdown-menu{
+/*ul.dropdown-menu{
 	padding: 20px;
-}
+}*/
 
-ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h1"]{ 
+/*ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h1"]{ 
 	color: #6499F1;
 }
 
@@ -922,9 +927,9 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h6"]{
 
 .glyphicon-quote:before{
 	display: none;
-}
+}*/
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
+/*.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
 	margin-right: 10px;
 	border-radius: 50px;
 	height: 34px;
@@ -945,9 +950,9 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command-value="h6"]{
 
 .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child){
 	display: none;
-}
+}*/
 
-ul.wysihtml5-toolbar a[data-toggle="dropdown"].btn.wysihtml5-command-active{ 
+/*ul.wysihtml5-toolbar a[data-toggle="dropdown"].btn.wysihtml5-command-active{ 
 	
 	background-size: 50%;
 	height: 34px;
@@ -976,7 +981,7 @@ margin-right: 10px;
 	height: 34px;
 	border: 1px solid rgba(128, 128, 128, 0.71);
 	background-color: transparent;
-	color: grey; }
+	color: grey; }*/
 
 .layout_body{
 	margin-top: 25px;
@@ -1759,3 +1764,34 @@ span.help-block{
 	color: #d9534f;
 }
 
+.text.optional.editable.form-control.medium-editor-hidden{
+display: none;
+}
+
+.form-group.text.optional.layout_content{
+	
+	.text.optional.editable.form-control{
+		min-height: 400px;	
+		font-weight: 300;
+		border: none;
+		background-color: transparent;
+
+		p{
+			font-family: "MuseoSans";
+			font-size: 16px!important;
+			font-weight: 500!important;
+			line-height: 1.2;
+			padding-left: 0px!important;
+		}
+		blockquote{
+			border-left: 2px solid orange;
+			padding-left: 10px;
+		}
+	}
+	
+}
+
+blockquote{
+	border-left: 2px solid orange;
+	padding-left: 10px;
+}
