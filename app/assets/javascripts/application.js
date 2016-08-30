@@ -50,7 +50,7 @@ $(document).ready(function(){
 
     var editor = new MediumEditor('.editable', {
 			toolbar: {
-        		buttons: ['bold', 'italic', 'underline', 'orderedlist', 'anchor', 'quote', 'image' ]
+        		buttons: ['bold', 'italic', 'underline', 'h1', 'h2', 'orderedlist', 'unorderedlist', 'anchor', 'quote', 'image' ]
     		},
 			placeholder: {
 	        	/* This example includes the default options for placeholder,

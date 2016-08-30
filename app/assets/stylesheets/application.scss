@@ -1641,6 +1641,7 @@ button.navbar-toggle{
 
 .blockquote{
 	border-left: 1px solid orange;
+	margin-left: 0;
 }
 
 /*.wysihtml5.optional.input-content.form-control.wysihtml5-editor{
@@ -1786,6 +1787,13 @@ display: none;
 		blockquote{
 			border-left: 2px solid orange;
 			padding-left: 10px;
+			margin-left: 0;
+		}
+		h1{
+			font-size: 22px;
+		}
+		h2{
+			font-size: 18px;
 		}
 	}
 	
@@ -1794,6 +1802,7 @@ display: none;
 blockquote{
 	border-left: 2px solid orange;
 	padding-left: 10px;
+	margin-left: 0;
 }
 
 .hint{
