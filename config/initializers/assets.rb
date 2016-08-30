@@ -8,4 +8,4 @@ Rails.application.config.assets.version = '1.3'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( "bootstrap.js", "sticky-kit.js", "medium-editor.js")
+Rails.application.config.assets.precompile += %w( bootstrap.js sticky-kit.js medium-editor.js)
